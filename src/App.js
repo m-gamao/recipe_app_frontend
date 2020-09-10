@@ -34,7 +34,7 @@ function App() {
       </div>
 
       <div className="box2">
-        {/* this is the translucent overlay */}
+        {/* this is the text overlay */}
         <h1>The Recipe Nook!</h1>
       </div>
       </div>

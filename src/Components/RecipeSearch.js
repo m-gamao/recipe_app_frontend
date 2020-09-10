@@ -7,7 +7,7 @@ import React, { Component } from 'react';
 import './App.css';
 import App from '../App';
 import Form from './Form';
-import Recipes from './components/Recipes';
+import Recipe from './components/Recipe';
 
 const API_KEY = "a8b915eca4beea848de3ad24d7f69e6b";
 const APP_ID = "d7756826";
@@ -23,9 +23,16 @@ class RecipeSearch extends Component {
     const api_call = await fetch('https://api.edamam.com/search?q=app_id=${APP_ID}&app_key=${YOUR_APP_KEY}')
 
     const data = await api_call.json();
-    console.log(data.recipes[0].recipe_id);
-    // console.log(recipeName);
-    // above you are console logging the const you just created.
+    this.setState({ recipes: data.recipes });
+  }
+  componentDidMount = () => {
+    const json = localStorage.getItem("recipes");
+    const recipes = JSON.parse(json);
+    this.setState({ recipes });
+  }
+  componentDidUpdate = () => {
+    const recipes = JSON.stringify(this.state.recipes);
+    localStorage.setItem("recipes", recipes);
   }
   render() {
     return (

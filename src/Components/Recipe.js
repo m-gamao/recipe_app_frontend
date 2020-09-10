@@ -1,9 +1,9 @@
 // Recipes.js:
 import React from 'react';
 
-const Recipes = props => (
+const Recipe = props => (
   <div>
-    { props.recipes.map((recipe) => {
+    { props.recipe.map((recipe) => {
       return (
         <div key={recipe.recipe_id}>
           <img src={recipe.image_url} alt={recipe.title} />
@@ -15,4 +15,4 @@ const Recipes = props => (
   </div>
 );
 
-export default Recipes;
+export default Recipe;
