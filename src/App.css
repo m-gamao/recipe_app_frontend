@@ -92,9 +92,10 @@
 
 /* TEXT BOX ********************************************************* */
 
+/* this is also the black tinted box around the title */
 .box1 {
   text-align: center;
-  opacity: .8;
+  opacity: .7;
   /* background: rgba(94, 83, 83, 0.5); */
   background-color: rgb(63, 59, 59);
   color: #fcf9f9;  
@@ -129,7 +130,7 @@
   color: rgb(37, 37, 37);
 }
 
-/* this is the opaque box holding the text */
+/* This is the black tinted translucent box around the text */
 .content {
   border: 1px solid; 
   border-color: rgb(39, 33, 33);
