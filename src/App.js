@@ -23,14 +23,19 @@ function App() {
         <button class="btn fav">My Favorite Recipes</button>
         </h5>
       
-      <div className="box">
+      <div className="box1">
 
        <div className="content"> 
           <style>
             @import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
           </style>                  
-          <h1>The Recipe Nook!</h1>
+          <h2>The Recipe Nook!</h2>
        </div>
+      </div>
+
+      <div className="box2">
+        {/* this is the translucent overlay */}
+        <h1>The Recipe Nook!</h1>
       </div>
       </div>
   );

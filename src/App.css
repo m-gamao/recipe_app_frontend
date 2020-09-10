@@ -92,9 +92,9 @@
 
 /* TEXT BOX ********************************************************* */
 
-.box {
+.box1 {
   text-align: center;
-  opacity: 1;
+  opacity: .8;
   /* background: rgba(94, 83, 83, 0.5); */
   background-color: rgb(63, 59, 59);
   color: #fcf9f9;  
@@ -104,13 +104,29 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/* this is the writing that you see */
+.box2 h1 {
+  /* color: white; */
+  color: white;
+  opacity: 1;
+  font-family: 'Merienda One', cursive;
+  font-size: 300%;
+  font-weight: bold;
+  position: absolute;
+  bottom: 40px;
+  /* bottom: 5px; */
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-/* below (h1) is the font/text "The Recipe Nook" */
-.content h1 {
+/* below (h1) is the invisible font/text "The Recipe Nook" */
+.content h2 {
   position: relative;
   bottom: 5px;
   display: inline-block;
-  color: white;
+  color: rgb(37, 37, 37);
 }
 
 /* this is the opaque box holding the text */
@@ -119,7 +135,7 @@
   border-color: rgb(39, 33, 33);
   background-color: rgb(37, 37, 37);
   text-align: center;
-  opacity: .8;
+  opacity: 1;
   font-family: 'Merienda One', cursive;
   font-size: 130%;
   padding: 5px;
