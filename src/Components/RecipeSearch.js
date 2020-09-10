@@ -1,8 +1,13 @@
 // (e) is the event obj in JS. This event obj means we can access the properties from it. (line 10) 
 // line 10- you're targeting the attribute 'recipeName' (element/property) data entered by user 
 // in the Form on Form.js. And here, we are accessing that 'value' that was submitted by user.
-// Whatver we get from the API is going to be stored in the data constant below.   
-
+// Whatver we get from the API is going to be stored in the data constant below. 
+// The things in componentDidUpdate will happen as soon as the component is updated (when
+  // the state changes).
+// LocalStorage only takes strings/json which is one big string. (no objects/arrays/numbers,etc)  
+  //So, you are providing "recipes" to it in a string "" as the first argument.
+  //The 2nd argument is the actual thing that you want to store.
+//Line 39, you are setting this.setState to the recipes:[] array above .
 import React, { Component } from 'react';
 import './App.css';
 import App from '../App';
