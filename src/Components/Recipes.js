@@ -1,5 +1,8 @@
 // Recipes.js in the tutorial video.
 // In the Link to pathname, we are grabbing the :id of the recipe (see router file)
+// Throughout this file, you have access to the (recipe) array in line 10, so that is
+//    what you're seeing throughout, accessing that array.
+
 import React from 'react';
 import { Link } from "react-router-dom";
 
@@ -23,7 +26,10 @@ const Recipes = props => (
                 </span></p>
             </div>
             <button className="recipe_buttons">
-              <Link to={{ pathname: '/recipe/${recipe.recipe_id}' }}>View Recipe</Link>
+              <Link to={{ 
+                pathname: '/recipe/${recipe.recipe_id}',
+                state: { recipe: recipe.title }
+             }}>View Recipe</Link>
             </button>
         </div>
         </div>

@@ -19,8 +19,8 @@ function App() {
         <button className="log-in-btn">Sign into My Account</button> 
       
         <h5>
-        <button class="btn rec">Find a Recipe</button> 
-        <button class="btn fav">My Favorite Recipes</button>
+        <button className="btn rec">Find a Recipe</button> 
+        <button className="btn fav">My Favorite Recipes</button>
         </h5>
       
       <div className="box1">
