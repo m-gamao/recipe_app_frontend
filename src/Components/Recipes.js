@@ -1,4 +1,5 @@
 // Recipes.js in the tutorial video.
+// This outputs the results of the search.
 // In the Link to pathname, we are grabbing the :id of the recipe (see router file)
 // Throughout this file, you have access to the (recipe) array in line 10, so that is
 //    what you're seeing throughout, accessing that array.

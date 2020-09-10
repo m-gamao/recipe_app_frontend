@@ -2,6 +2,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
+// import RecipeSearch from ''
 // import vid1 from './assets/videos/video-salt.mp4'
 // import vid2 from './assets/videos/video-chop.mp4'
 // import vid3 from './assets/videos/video-wok.mp4'
@@ -19,10 +20,10 @@ function App() {
         <button className="log-in-btn">Sign into My Account</button> 
       
         <h5>
-        <button className="btn rec">Find a Recipe</button> 
+        <button className="btn rec" onClick="">Find a Recipe</button> 
         <button className="btn fav">My Favorite Recipes</button>
         </h5>
-      
+          {/* <button id='getData' onclick="GetData()">Get Data</button> */}
       <div className="box1">
 
        <div className="content"> 
@@ -40,6 +41,8 @@ function App() {
       </div>
   );
 };
+
+
 
 export default App;
     

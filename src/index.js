@@ -6,7 +6,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// import RecipeSC from './recipeshowcase';
 
 ReactDOM.render(
   <React.StrictMode>
