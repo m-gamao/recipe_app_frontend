@@ -1,0 +1,256 @@
+/* App.css: */
+/* VIDEO BACKGROUND PLAYING************************************* */
+
+/* .video-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%; 
+  overflow: hidden;
+} */
+/* .video-container video {
+  /* Make video to at least 100% wide and tall */
+  /* min-width: 100%; 
+  min-height: 100%;  */
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  /* width: auto;
+  height: auto; */
+
+  /* Center the video */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}  */
+
+/* BUTTONS************************************ */
+
+.btn {
+  opacity: 1;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2b812e;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px #999;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.fav {
+  top: 62%;
+  left: 50%;
+}
+.rec {
+  top: 53%;
+  left: 50%;
+}
+.btn:hover {background-color: #3d8840}
+
+.btn:active {
+  background-color: #414241;
+  box-shadow: 0 5px #666;
+} 
+
+/* LOG IN BUTTON******************************************************** */
+
+.log-in-btn {
+  position : absolute;
+  top: 25px;  
+  left: 25px;
+  opacity: 1;
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2b812e;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px #999;
+
+ } 
+
+ .log-in-btn:hover {background-color: #3d8840}
+
+ .log-in-btn:active {
+   background-color: #414241;
+   box-shadow: 0 5px #666;
+   transform: translateY(1px);
+ } 
+
+/* TEXT BOX ********************************************************* */
+
+.box {
+  text-align: center;
+  opacity: 1;
+  /* background: rgba(94, 83, 83, 0.5); */
+  background-color: rgb(63, 59, 59);
+  color: #fcf9f9;  
+  font-weight: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* below (h1) is the font/text "The Recipe Nook" */
+.content h1 {
+  position: relative;
+  bottom: 5px;
+  display: inline-block;
+  color: white;
+}
+
+/* this is the opaque box holding the text */
+.content {
+  border: 1px solid; 
+  border-color: rgb(39, 33, 33);
+  background-color: rgb(37, 37, 37);
+  text-align: center;
+  opacity: .8;
+  font-family: 'Merienda One', cursive;
+  font-size: 130%;
+  padding: 5px;
+  width: 562px;
+  height: 240px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);   
+  font-weight: bold; 
+  /* color: #fdfbfb;   */
+  /* Below is for a white opaque text box: */
+  /* background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
+  /* background: rgba(204, 204, 204, 0.5); */ 
+}
+
+/* BACKGROUND PIC ********************************************************* */
+
+.homepage_pic {
+  background: no-repeat center fixed;     
+  background-size: cover;
+} 
+
+/* USE THE BELOW BOX WITH THE VIDEO IF USED */
+/*
+.box {
+  text-align: center;
+  opacity: 1;
+  background: rgb(12, 12, 12); 
+  background: rgba(14, 13, 13, 0.5);
+  color: #fcf9f9;  
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+ /* background-color: #ffffff; */
+
+/* OTHER CODE - UNUSED ******************************************************** */
+/* Centered text */
+/* .banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 15px;
+  padding-top: 50px;
+} */
+
+
+/* 
+
+.section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+} */
+
+/* .section h1 {
+  text-align: center;
+  font-size: 6rem;
+  font-family: "Cookie";
+  padding: 20px;
+  margin: 15px;
+  z-index: 1;
+  opacity: 0.7;
+} */
+
+/* .video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.color-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: lightblue;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.5;
+}  */
+
+
+/* .App {
+  text-align: center;
+} */
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
