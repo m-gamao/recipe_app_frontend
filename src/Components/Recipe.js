@@ -1,3 +1,6 @@
+// This fetches ONE RECIPE that the user has chosen, and displays it.
+// ****I need to add the actual recipe to this.
+
 // We made this a class based component because we're going to make use of state in 
   // this component... activeRecipe.
 // Lifecycle Hook - componentdidmount - this method fires as soon as class Recipe component
@@ -22,7 +25,7 @@ class Recipe extends React.Component {
   }
   componentDidMount = () => {
     const title = this.props.location.state.recipe;
-    const req = await fetch('https://api.edamam.com/search?q=app_id=${APP_ID}&app_key=${YOUR_APP_KEY}&q=${title}')
+    const req = await fetch('https://api.edamam.com/search?q=app_id=${APP_ID}&app_key=${APP_KEY}&q=${title}')
 
     const res = await req.json();
     this.setState({ activeRecipe: res.recipes[0]})
@@ -38,6 +41,7 @@ class Recipe extends React.Component {
             <div className="active-recipe">
             <img className="active-recipe__img" src={recipe.image_url} alt={recipe.title}/>
             <h3 className="active-recipe__title">{recipe.title}</h3>
+            <h4 className="active-recipe__add">{recipe.addRecipe}</h4>
             <button className="active-recipe__button">
               <Link to="/">Go Home</Link>
             </button>

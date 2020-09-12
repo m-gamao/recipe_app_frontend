@@ -1,3 +1,5 @@
+// This fetches the API data on recipes and renders a list via components.
+
 // (e) is the event obj in JS. This event obj means we can access the properties from it. (line 10) 
 // line 10- you're targeting the attribute 'recipeName' (element/property) data entered by user 
 // in the Form on Form.js. And here, we are accessing that 'value' that was submitted by user.
@@ -21,13 +23,13 @@ class RecipeSearch extends Component {
   state = {
     recipes: []
   }
-  getRecipe = async (e) => {
-    const recipeName = e.target.elements.recipeName.value;
-    e.preventDefault();
+  getRecipe = query => {
 
-    const api_call = await fetch('https://api.edamam.com/search?q=app_id=${APP_ID}&app_key=${YOUR_APP_KEY}&q=${recipeName}&count=20')
-
-    const data = await api_call.json();
+    fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`)
+    .then(res => res.json())
+    .then(data => {
+      debugger
+    })
     this.setState({ recipes: data.recipes });
   }
   componentDidMount = () => {
@@ -47,7 +49,6 @@ class RecipeSearch extends Component {
         </header>
         <Form getRecipe={this.getRecipe}/>
         <Recipes recipe={this.state.recipes} />
-
       </div>
     );
   }

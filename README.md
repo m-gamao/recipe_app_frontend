@@ -1,9 +1,28 @@
-## Notes:
-1. Be sure to add components for liking/unliking with a heart in:
-    - recipes.js
-    - recipe.js
-2. Add user login components.
+# Notes:
+1. Set up Meal Plan button.
 
+## Parts:
+1. App.js: Renders the home page with button navigation.
+2. Form.js: renders the search form that the user enters a keyword for recipe search.
+3. RecipeSearch.js: Sends a fetch call to the recipe API to get a listing of recipes.
+4. Recipes.js: Lists the results of the fetch. 
+    -User can click likes here.
+5. Recipe.js: Shows the single recipe that the user has selected from the search results.
+    -User can click likes.
+6. CreatePlan.js: Clicking the button on the homepage directs you here. Uses RecipesSearch, 
+Form.js, Recipes.js, and Recipe.js.
+6. App.css: CSS styling
+7. Index.js:
+8. Index.css:
+
+
+## Flow:
+1. User Login: App.js > click login button > login.js > App.js
+Logout path: User can logout from any page via a link or button > click logout > App.js.
+2. Find a recipe: App.js > click 1st button > form.js > recipesearch.js > recipes.js > recipe.js (*how do you incorporate clicking 'like' on a recipe?)
+3. See my favorites: App.js > click 2nd button > AllFavorites.js > form.js > recipesearch.js > recipes.js > recipe.js.
+
+***************************************************************************
 ## Parts:
 1. App.js: Renders the home page with button navigation.
 2. Form.js: renders the search form that the user enters a keyword for recipe search.
@@ -22,6 +41,15 @@
 Logout path: User can logout from any page via a link or button > click logout > App.js.
 2. Find a recipe: App.js > click 1st button > form.js > recipesearch.js > recipes.js > recipe.js (*how do you incorporate clicking 'like' on a recipe?)
 3. See my favorites: App.js > click 2nd button > AllFavorites.js > form.js > recipesearch.js > recipes.js > recipe.js.
+
+**************************
+## Old Notes:
+1. Be sure to add components for liking/unliking with a heart in:
+    - recipes.js
+    - recipe.js
+2. Add user login components.
+
+
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

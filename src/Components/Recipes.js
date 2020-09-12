@@ -1,5 +1,6 @@
+// This page lists all the recipe results from the user's search request.
+
 // Recipes.js in the tutorial video.
-// This outputs the results of the search.
 // In the Link to pathname, we are grabbing the :id of the recipe (see router file)
 // Throughout this file, you have access to the (recipe) array in line 10, so that is
 //    what you're seeing throughout, accessing that array.
@@ -22,9 +23,9 @@ const Recipes = props => (
               <h5 className="recipes__title">
                 { recipe.title.length < 20 ? '${recipe.title}' : '${recipe.title.substring(0, 25)}...'}
               </h5>
-              <p className="recipes__subtitle">Publisher: <span>
-                { recipe.publisher }
-                </span></p>
+              {/* <p className="add_recipe">Add this recipe <span>
+              
+                </span></p> */}
             </div>
             <button className="recipe_buttons">
               <Link to={{ 
