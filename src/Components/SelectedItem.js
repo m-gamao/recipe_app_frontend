@@ -7,19 +7,19 @@
   // gets loaded/mounted onto the web browser. Which explains the name of it. So, 
   // anything that happens inside of componentDidMount is going to happen as soon as 
   // the Recipe component gets loaded on the screen. It's going to be similar to what we
-  // did in the RecipeSearch.js file.
+  // did in the FetchList.js file.
 // We are getting state.recipe (ln 19) from the recipe.js file where we set up the state.recipe.
   // req stands for request, res stands for response, when dealing with the json.
 // In the render, it checks to see if the array is not = 0, and if so, it will display the info.    
 // 'Link to' button takes you back to the home page. Use the path (stored in router)
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 
 const API_KEY = "a8b915eca4beea848de3ad24d7f69e6b";
 const APP_ID = "d7756826";
 
-class Recipe extends React.Component {
+class SelectedItem extends React.Component {
   state = {
     activeRecipe: []
   }
@@ -53,4 +53,4 @@ class Recipe extends React.Component {
     
 };
 
-export default Recipe;
+export default SelectedItem;

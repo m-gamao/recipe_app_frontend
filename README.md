@@ -1,8 +1,5 @@
-# Notes:
-1. Set up Meal Plan button.
-
 ## Parts:
-1. App.js: Renders the home page with button navigation.
+1. App.js: Renders the home page with button navigation. *Done*
 2. Form.js: renders the search form that the user enters a keyword for recipe search.
 3. RecipeSearch.js: Sends a fetch call to the recipe API to get a listing of recipes.
 4. Recipes.js: Lists the results of the fetch. 

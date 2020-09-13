@@ -2,7 +2,7 @@
 
 // (e) is the event obj in JS. This event obj means we can access the properties from it. (line 10) 
 // line 10- you're targeting the attribute 'recipeName' (element/property) data entered by user 
-// in the Form on Form.js. And here, we are accessing that 'value' that was submitted by user.
+// in the UserInput on UserInput.js. And here, we are accessing that 'value' that was submitted by user.
 // Whatver we get from the API is going to be stored in the data constant below. 
 // The things in componentDidUpdate will happen as soon as the component is updated (when
   // the state changes).
@@ -13,13 +13,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import App from '../App';
-import Form from './Form';
-import Recipe from './components/Recipe';
+import UserInput from './UserInput';
+import SearchResults from './components/SearchResults';
 
 const API_KEY = "a8b915eca4beea848de3ad24d7f69e6b";
 const APP_ID = "d7756826";
 
-class RecipeSearch extends Component {
+class FetchList extends Component {
   state = {
     recipes: []
   }
@@ -45,12 +45,12 @@ class RecipeSearch extends Component {
     return (
       <div className="Search">
         <header className="Search-header">
-          <h1 className="Search-title">Find a Recipe!</h1>
+          <h1 className="Search-title">Recipes</h1>
         </header>
-        <Form getRecipe={this.getRecipe}/>
-        <Recipes recipe={this.state.recipes} />
+         <UserInput getRecipe={this.getRecipe}/>
+         <SearchResults recipe={this.state.recipes} />
       </div>
     );
   }
 }
-export default RecipeSearch;
+export default FetchList;

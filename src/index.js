@@ -1,11 +1,10 @@
 // Index.js:
-import './css/customStyles.css'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Form from './Components/Form';
+import UserInput from './components/UserInput';
 
 ReactDOM.render(
   <React.StrictMode>

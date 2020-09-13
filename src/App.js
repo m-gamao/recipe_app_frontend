@@ -1,13 +1,15 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Form from './Components/Form';
+import UserInput from './components/UserInput';
 // import './css/customStyles.css'
 import './App.css';
+import Home from './components/Home';
 
 function App() {
   return (
     <Switch>
-      <Route exact path="/recipes" render={props => <Form {...props}/>} />
+      <Home />
+      <Route exact path="/SearchResults" render={props => <UserInput {...props}/>} />
     </Switch>
   );
 };
