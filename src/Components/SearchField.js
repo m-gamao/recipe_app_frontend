@@ -2,20 +2,7 @@ import React from 'react';
 
 function SearchField() {
 
-  function showForm() {
-  
-    return (
-      <button onClick={sayHello}>
-        
-      </button>
-    );
-}
-
-export default App;
-
-
-
-const SearchField = (props) => {
+const entryform = (props) => {
   return (
     <div className="SearchField">
            <div> 
@@ -29,13 +16,7 @@ const SearchField = (props) => {
           </div>
     </div>
   )
-
-
-const showForm = () => {
-    this.setState({
-        showForm: !this.state.showForm
-    })
-}
+  }
 }
 
 export default SearchField;

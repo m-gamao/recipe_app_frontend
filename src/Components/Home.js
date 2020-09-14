@@ -1,4 +1,5 @@
 import React from 'react'
+import './Home.css';
 // import { Link } from 'react-router-dom'
 import SearchField from './SearchField'
 
@@ -12,7 +13,7 @@ const Home = () => {
             {/* <button className="log-in-btn">Sign into My Account</button>  */}
         
             <h5>
-            <button className="btn rec" onClick={showForm}>Find a Recipe</button> 
+            <button className="btn rec" onClick={SearchField}>Find a Recipe</button> 
             <button className="btn create">See My Favorites</button>
             </h5>
             {/* <button id='getData' onclick="GetData()">Get Data</button> */}
