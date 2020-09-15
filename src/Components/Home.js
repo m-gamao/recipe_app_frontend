@@ -11,13 +11,16 @@ const Home = () => {
             </div> 
 
         <h5>
-            <Link to="/Search">
+            <Link to="/search">
                 <button className="btn rec" type="button">
                     Find a Recipe!
                 </button>
             </Link>
-
-            <button className="btn create">See My Favorites</button>
+            <Link to="/favorites">
+                <button className="btn create" type="button">
+                    See My Favorites
+                </button>
+            </Link>
         </h5>
           
         <div className="box1">

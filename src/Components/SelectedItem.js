@@ -12,6 +12,8 @@
   // req stands for request, res stands for response, when dealing with the json.
 // In the render, it checks to see if the array is not = 0, and if so, it will display the info.    
 // 'Link to' button takes you back to the home page. Use the path (stored in router)
+
+// 
 import React, { Component } from 'react';
 // import { Link } from 'react-router-dom';
 
@@ -23,7 +25,7 @@ class SelectedItem extends React.Component {
   state = {
     activeRecipe: []
   }
-  componentDidMount = () => {
+  componentDidMount = async () => {
     const title = this.props.location.state.recipe;
     const req = await fetch('https://api.edamam.com/search?q=app_id=${APP_ID}&app_key=${APP_KEY}&q=${title}')
 

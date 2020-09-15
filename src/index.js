@@ -1,4 +1,4 @@
-// Index.js:
+// Index.js - responsible for rendering everything.
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';

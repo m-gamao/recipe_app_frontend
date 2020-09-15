@@ -5,6 +5,8 @@
 // Throughout this file, you have access to the (recipe) array in line 10, so that is
 //    what you're seeing throughout, accessing that array.
 
+// on the card below, the ternary operator is saying that if the title is less than 20 char's long, 
+  // then show the first 25 characters.
 import React from 'react';
 import { Link } from "react-router-dom";
 
@@ -41,4 +43,4 @@ const SearchResults = props => (
   </div>
 );
 
-export default Recipe;
+export default SearchResults;

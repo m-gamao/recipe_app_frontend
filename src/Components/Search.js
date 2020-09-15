@@ -1,3 +1,6 @@
+// In ln 30, the jsondata.hits is the hits array inside the json, that I found in the console, after clicking
+  // search button on fish.
+
 import React, { Component } from "react";
 import "./Search.css";
 
@@ -25,7 +28,7 @@ class Search extends Component {
         return response.json();
       })
       .then(jsonData => {
-        this.setState({ recipes: jsonData.recipes });
+        this.setState({ recipes: jsonData.hits });
       });
   };
 
