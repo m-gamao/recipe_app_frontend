@@ -1,4 +1,4 @@
-// Form.js:
+// NOT USING THIS FILE!!!!!!!!!!!!!!!  ** NOW DEFUNCT ** 
 import React, { useState } from 'react';
 
 // this is a stateless functional component because it doesn't need any state. 
@@ -23,7 +23,7 @@ const UserInput = props => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input onChange={handleChange} type = "text" name="recipeName" value={recipeName}/>
+      <input onChange={handleChange} type = "text" name="text" placeholder="Search" value={recipeName}/>
       <button>Search</button>
     </form>
   )
@@ -31,3 +31,18 @@ const UserInput = props => {
   
 
 export default UserInput;
+
+//   <div className="Search">
+//  <div> 
+// <form id= "Keyword-search">
+
+//     <label>Enter Recipe Keyword: </label>
+//     <input
+//       name="text"
+//       type="text"
+//       placeholder="Search"
+//       onChange={event => this.handleOnChange(event)}
+//       value={this.state.searchValue}/>
+
+//     <button onClick={this.handleSearch}>Search</button>
+// </form> 

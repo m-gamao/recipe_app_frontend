@@ -13,7 +13,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import App from '../App';
-import UserInput from './UserInput';
+//import UserInput from './UserInput';
 import SearchResults from './components/SearchResults';
 
 const API_KEY = "a8b915eca4beea848de3ad24d7f69e6b";

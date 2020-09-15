@@ -7,11 +7,9 @@ import * as serviceWorker from './serviceWorker';
 import UserInput from './components/UserInput';
 
 ReactDOM.render(
-  <React.StrictMode>
     <BrowserRouter>
       <App />
-    </BrowserRouter>
-  </React.StrictMode>,
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
