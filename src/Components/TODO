@@ -1,0 +1,9 @@
+1. Show the selected item.
+2. On the search results page, there will be a heart button/empty
+    - when you click the heart, it animates and fills.
+3. The search results page should also have links to:
+    - Go Home
+    - See My Favorites
+3. Once user clicks See My Favorites:
+    -User is directed to Favorites Page, which is all the favorite recipes clicked.
+    -User cannot search favorites at this point in time. Will allow later after graduation.

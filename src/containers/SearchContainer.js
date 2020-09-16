@@ -2,8 +2,7 @@
   // search button on fish.
 
 import React, { Component } from "react";
-import "./Search.css";
-
+import "./SearchContainer.css";
 
 const API_KEY = "a8b915eca4beea848de3ad24d7f69e6b";
 const APP_ID = "d7756826";
@@ -32,6 +31,7 @@ class Search extends Component {
       });
   };
 
+// BELOW CODE IS THE SEARCH FIELD FOR USER TO ENTER A KEYWORD ********************
   render() {
     return (
       <div id="main">
@@ -45,12 +45,18 @@ class Search extends Component {
         />
         <button onClick={this.handleSearch}>Search</button>
 
+{/* BELOW CODE DISPLAYS THE SEARCH RESULTS**************************** */}
+{/* THE ONLY ATTRIBS WE'RE FETCHING IS THE LABEL, URL, AND IMAGE**************** */}
+{/* Line 57 is the link the user clicks to navigate to the single recipe they choose */}
+
         {this.state.recipes ? (
           <div id="recipes-container">
-            {this.state.recipes.map((recipe, index) => (
-              <div class="single-recipe" key={index}>
-                <h2>{recipe.strRecipe}</h2>
-                <img src={recipe.strRecipeThumb} alt="recipe-thumbnail" />
+            {this.state.recipes.map((hit, index) => (
+              <div class="recipe-list" key={index}>
+                <h2>{hit.recipe.label}</h2>
+                <a href={hit.recipe.url} target="_blank">
+                <img src={hit.recipe.image} alt="recipe-thumbnail" />
+                </a>
               </div>
             ))}
           </div>

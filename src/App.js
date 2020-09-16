@@ -8,8 +8,8 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
-import Search from './components/Search';
-import SearchResults from './components/ShowResults';
+import Search from './containers/SearchContainer';
+import SearchResults from './components/DisplayResults';
 
 
 class App extends Component {
