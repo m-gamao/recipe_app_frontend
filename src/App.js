@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
-import Search from './containers/SearchContainer';
+import SearchContainer from './Pages/SearchDisplay/containers/SearchContainer';
 import SearchResults from './components/DisplayResults';
 
 
@@ -17,10 +17,8 @@ class App extends Component {
     return (
       <main className="container">
         <Switch>
-            <Route path="/search" component={Search} />
-            <Route path="/search_results" component={SearchResults} />
-            {/* <Route path="/selecteditem" component={SelectedItem} /> */}
-            <Route path="/" component={Home} />
+            <Route exact path="/search" component={SearchContainer} />
+            <Route exact path="/" component={Home} />
         </Switch>
       </main>
     )

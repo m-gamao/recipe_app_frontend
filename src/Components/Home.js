@@ -1,7 +1,7 @@
 import React from 'react';
 // import './Home.css';
 import { Link } from 'react-router-dom'
-import Search from '../containers/SearchContainer';
+import Search from '../Pages/SearchDisplay/containers/SearchContainer';
 
 const Home = () => {
     return (
