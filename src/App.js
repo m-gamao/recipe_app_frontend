@@ -9,7 +9,6 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
 import SearchContainer from './Pages/SearchDisplay/containers/SearchContainer';
-import SearchResults from './components/DisplayResults';
 
 
 class App extends Component {
