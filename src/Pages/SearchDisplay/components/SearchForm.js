@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getRecipeThunk } from '../../../Store/middleware/recipeSearchAsync';
+import { getRecipes } from '../../../Store/middleware/recipeSearchAsync';
 
 const SearchForm = () => { 
     const [search, setSearch] = useState("")
@@ -11,7 +11,7 @@ const SearchForm = () => {
     };
 
     const handleSearch = () => {
-        dispatch(getRecipeThunk(search))
+        dispatch(getRecipes(search))
         setSearch("")
     };
     

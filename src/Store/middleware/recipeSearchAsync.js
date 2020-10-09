@@ -5,23 +5,14 @@
 import { loadingRecipes, addRecipes } from "../reducers/manageRecipesReducer"
 
 
-const APP_KEY = "a8b915eca4beea848de3ad24d7f69e6b";
-const APP_ID = "d7756826";
+const APP_KEY = "3822eee64683985d4b5cc5935bae9734";
+const APP_ID = "3dfa9e92";
 
-export const getRecipeThunk = (query) => {
+export const getRecipes = (query) => {
     return dispatch => {
-        dispatch(loadingRecipes())
         return fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
-        .then(r => r.json())
-        .then(response => {
-            debugger
-            if (response.error) {
-                alert(response.error)
-            } else {
-                dispatch(addRecipes(response.data))
-            }
-        })
-        .catch(console.log)
+        .then(res => res.json())
+        .then(recipes => dispatch({type: "SHOW_RECIPES", payload: recipes}))
     }
 }  
     

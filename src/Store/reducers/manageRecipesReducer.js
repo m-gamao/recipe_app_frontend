@@ -14,29 +14,22 @@
 const initialState = {
     recipes: [],
     searchValue: '',
-    resultsList: [],
     likeRecipe: false,
     loadingRecipes: false
 }
 
 export default function manageRecipesReducer(state = initialState, action) {
     switch(action.type) {
-        case GET_RECIPE:
+        case LOADING_RECIPES:
             return {
                 ...state,
                 searchValue: action.payload.searchValue
             }
-        case LOADING_RECIPES:
+        case SHOW_RECIPES:
             return {
                 ...state,
-                loadingRecipes: true
+                recipes: action.payload.recipes
             }
-        case ADD_RECIPES:
-            return {
-                ...state,
-                resultsList: [...action.payload.results],
-                loadingRecipes: false
-            } 
 
         case LIKE_RECIPE:
             return {
@@ -69,9 +62,8 @@ export default function manageRecipesReducer(state = initialState, action) {
 }
 
 //ACTION TYPES- is what you will pass into your action creators and use in your cases.
-const GET_RECIPE = "GET_RECIPE"
 const LOADING_RECIPES = "LOADING_RECIPES"
-const ADD_RECIPES = "ADD_RECIPES"
+const SHOW_RECIPES = "SHOW_RECIPES"
 const LIKE_RECIPE = "LIKE_RECIPE"
 const GET_FAVORITES = "GET_FAVORITES"
 const SEARCH_FAVORITES = "SEARCH_FAVORITES"
@@ -82,28 +74,27 @@ const LOADING_FAVES_BY_SERVINGS = "LOADING_FAVES_BY_SERVINGS"
 // *Target means property in your state. 
 // Synchronous actions.
 // The difference from thunk is - Action creators return objects, and Thunk creators return functions.
-export const getRecipe = searchValue => {
+
+// RECIPE SEARCH:
+export const loadingRecipes = searchValue => {
     return {
-        type: GET_RECIPE,
+        type: LOADING_RECIPES,
         payload: {
             searchValue
         }
     }
 }
-export const loadingRecipes = () => {
+export const showRecipes = (recipes) => {
     return {
-        type: LOADING_RECIPES,
-    }
-}
-export const addRecipes = resultsList => {
-    return {
-        type: ADD_RECIPES,
+        type: SHOW_RECIPES,
         payload: {
-            resultsList
+            recipes
         }
     }
 }
 
+
+// FAVORITES:
 export const likeRecipe = likeRecipe => {
     return {
         type: LIKE_RECIPE,
