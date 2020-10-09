@@ -1,7 +1,7 @@
 import React from 'react';
-import './Home.css';
+import './assets/Home.css';
 import { Link } from 'react-router-dom'
-import Search from '../Pages/SearchDisplay/containers/SearchContainer';
+// import Search from '../Pages/SearchDisplay/containers/SearchContainer';
 
 const Home = () => {
     return (

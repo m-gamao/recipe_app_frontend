@@ -8,28 +8,36 @@
 // importing and exporting.
 // likeRecipe is a boolean. it's either true or false.
 // This file contains 3 parts: 1) Reducers, and 2) Action Types, and 3) Action Creators.
-
+// THERE ARE NO FETCHES IN THE REDUCER.
 
 // REDUCERS **********************
 const initialState = {
     recipes: [],
     searchValue: '',
     resultsList: [],
-    likeRecipe: false
+    likeRecipe: false,
+    loadingRecipes: false
 }
 
 export default function manageRecipesReducer(state = initialState, action) {
     switch(action.type) {
-        case SET_RECIPE:
+        case GET_RECIPE:
             return {
                 ...state,
                 searchValue: action.payload.searchValue
             }
-        case LOADING_SEARCH_RESULTS:
+        case LOADING_RECIPES:
             return {
                 ...state,
-                resultsList: action.payload.resultsList
+                loadingRecipes: true
             }
+        case ADD_RECIPES:
+            return {
+                ...state,
+                resultsList: action.payload.results,
+                loadingRecipes: false
+            } 
+
         case LIKE_RECIPE:
             return {
                 ...state,
@@ -61,8 +69,9 @@ export default function manageRecipesReducer(state = initialState, action) {
 }
 
 //ACTION TYPES- is what you will pass into your action creators and use in your cases.
-const SET_RECIPE = "SET_RECIPE"
-const LOADING_SEARCH_RESULTS = "LOADING_SEARCH_RESULTS"
+const GET_RECIPE = "GET_RECIPE"
+const LOADING_RECIPES = "LOADING_RECIPES"
+const ADD_RECIPES = "ADD_RECIPES"
 const LIKE_RECIPE = "LIKE_RECIPE"
 const GET_FAVORITES = "GET_FAVORITES"
 const SEARCH_FAVORITES = "SEARCH_FAVORITES"
@@ -73,22 +82,28 @@ const LOADING_FAVES_BY_SERVINGS = "LOADING_FAVES_BY_SERVINGS"
 // *Target means property in your state. 
 // Synchronous actions.
 // The difference from thunk is - Action creators return objects, and Thunk creators return functions.
-export const setRecipe = searchValue => {
+export const getRecipe = searchValue => {
     return {
-        type: SET_RECIPE,
+        type: GET_RECIPE,
         payload: {
             searchValue
         }
     }
 }
-export const loadingSearchResults = resultsList => {
+export const loadingRecipes = () => {
     return {
-        type: LOADING_SEARCH_RESULTS,
+        type: LOADING_RECIPES,
+    }
+}
+export const addRecipes = resultsList => {
+    return {
+        type: ADD_RECIPES,
         payload: {
             resultsList
         }
     }
 }
+
 export const likeRecipe = likeRecipe => {
     return {
         type: LIKE_RECIPE,

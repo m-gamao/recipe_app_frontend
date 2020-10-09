@@ -7,7 +7,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Home from './components/Home';
+import Home from './Home';
 import SearchContainer from './Pages/SearchDisplay/containers/SearchContainer';
 
 

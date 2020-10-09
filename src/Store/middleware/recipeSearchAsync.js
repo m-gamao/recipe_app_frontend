@@ -2,53 +2,46 @@
 // These are all asynchronous calls. Whenever you have a thunk action creator - you are making
 // an asynchronous call.
 
-import { startedRecipeSearch } from "../reducers/manageRecipesReducer"
+import { loadingRecipes, addRecipes } from "../reducers/manageRecipesReducer"
 
-// export const getRecipe = query => {
-//     return (dispatch, getState) 
-//         dispatch(startedRecipeSearch(query))
-//     }
-const API_KEY = "a8b915eca4beea848de3ad24d7f69e6b";
+
+const APP_KEY = "a8b915eca4beea848de3ad24d7f69e6b";
 const APP_ID = "d7756826";
 
 export const getRecipeThunk = (query) => {
     return dispatch => {
-        return fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`, {
-        credentials: "include",
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        })
+        dispatch(loadingRecipes())
+        return fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
         .then(r => r.json())
         .then(response => {
+            debugger
             if (response.error) {
-            alert(response.error)
+                alert(response.error)
             } else {
-            dispatch(setRecipes(response.data))
+                dispatch(addRecipes(response.data))
             }
         })
         .catch(console.log)
     }
 }  
     
-export const likeRecipe = () => {
-    return dispatch => {
-      const sendableLikeData = {
-         recipe_name: likeData.recipe_id
-        },
-    return fetch("http://localhost:3001/api/v1/favorites",)
-        .then(r => r.json())
-        .then(response => {
-            if (response.error) {
-            alert(response.error)
-            } else {
-            dispatch(addFavorite(response.data))
-            }
-        })
-        .catch(console.log)
-    }
-}  
+// export const likeRecipe = () => {
+//     return dispatch => {
+//       const sendableLikeData = {
+//          recipe_name: likeData.recipe_id
+//         },
+//     return fetch("http://localhost:3001/api/v1/favorites",)
+//         .then(r => r.json())
+//         .then(response => {
+//             if (response.error) {
+//             alert(response.error)
+//             } else {
+//             dispatch(addFavorite(response.data))
+//             }
+//         })
+//         .catch(console.log)
+//     }
+// }  
 
 
 

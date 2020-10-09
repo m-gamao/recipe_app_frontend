@@ -1,15 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form } from 'react-bootstrap'
+import { useDispatch } from 'react-redux';
+import { getRecipeThunk } from '../../../Store/middleware/recipeSearchAsync';
 
-const SearchForm = ({ handleOnChange, handleSearch, searchValue }) => {
+const SearchForm = () => { 
+    const [search, setSearch] = useState("")
+    const dispatch = useDispatch()
+
+    const handleOnChange = event => {
+        setSearch(event.target.value)
+    };
+
+    const handleSearch = () => {
+        dispatch(getRecipeThunk(search))
+        setSearch("")
+    };
+    
     return (
         <form onSubmit={handleSearch}>
             <input
-                name="text"
-                type="text"
+                name="search"
+                type="search"
                 placeholder="Search"
                 onChange={handleOnChange}
-                value={searchValue}
+                value={search}
             />
             <button type="submit">Search</button>
         </form>

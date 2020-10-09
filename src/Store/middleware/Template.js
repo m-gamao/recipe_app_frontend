@@ -1,5 +1,14 @@
-import {  } from './tripForm'
-// synchronous actions
+//***THE SYNCHRONOUS FILE:***
+//The only things that go in this file are:
+// - the action types
+// - the action creators
+// - reducers
+//Basically only synchronous things.
+
+// import {  } from './tripForm'
+
+
+//**ACTION CREATORS: */
 export const setMyTrips = trips => {
   return {
     type: "SET_MY_TRIPS",
@@ -36,6 +45,7 @@ export const updateTripSuccess = trip => {
 
 // async actions
 
+// Fetch the favorites from the rails backend:
 export const getFavorites = () => {
   return dispatch => {
     return fetch("http://localhost:3001/api/v1/favorites", {

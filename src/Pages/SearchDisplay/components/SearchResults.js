@@ -3,7 +3,7 @@
 // {/* Line 21 is the link the user clicks to navigate to the single recipe they choose */}
 
 import React, { Component } from 'react';
-import './SearchResults.css';
+import '../../../assets/SearchResults.css';
 
 class SearchResults extends Component {
   state = {
