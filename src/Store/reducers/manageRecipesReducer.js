@@ -34,7 +34,7 @@ export default function manageRecipesReducer(state = initialState, action) {
         case ADD_RECIPES:
             return {
                 ...state,
-                resultsList: action.payload.results,
+                resultsList: [...action.payload.results],
                 loadingRecipes: false
             } 
 
