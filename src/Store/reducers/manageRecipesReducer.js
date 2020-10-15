@@ -10,128 +10,54 @@
 // This file contains 3 parts: 1) Reducers, and 2) Action Types, and 3) Action Creators.
 // THERE ARE NO FETCHES IN THE REDUCER.
 
-// REDUCERS **********************
+// ***REDUCERS **********************
 const initialState = {
-    recipes: [],
-    searchValue: '',
-    likeRecipe: false,
-    loadingRecipes: false
+    recipesData: [],
+    faveRecipeData: []
 }
 
 export default function manageRecipesReducer(state = initialState, action) {
     switch(action.type) {
-        case LOADING_RECIPES:
-            return {
-                ...state,
-                searchValue: action.payload.searchValue
-            }
         case SHOW_RECIPES:
             return {
                 ...state,
-                recipes: action.payload.recipes
-            }
+                recipesData: action.payload.recipesData
+            }        
+        case SHOW_FAVORITES:
+            return {
+                ...state,
+                faveRecipeData: action.payload.faveRecipeData
+            }    
 
-        case LIKE_RECIPE:
-            return {
-                ...state,
-                likeRecipe: true 
-            }
-        case GET_FAVORITES:
-            return {
-                ...state,
-                favesList: action.payload.favesList
-            }
-        case SEARCH_FAVORITES:
-            return {
-                ...state,
-                favSearch: action.payload.favSearch
-            }
-        case LOADING_SELECTED_FAVES:
-            return {
-                ...state,
-                SelectedFaves: action.payload.SelectedFaves
-            }
-        case LOADING_FAVES_BY_SERVINGS:
-            return {
-                ...state,
-                FavServings: action.payload.FavServings
-            }
         default:
             return state
     }
+
 }
 
-//ACTION TYPES- is what you will pass into your action creators and use in your cases.
-const LOADING_RECIPES = "LOADING_RECIPES"
+//***ACTION TYPES- is what you will pass into your action creators and use in your cases.
 const SHOW_RECIPES = "SHOW_RECIPES"
-const LIKE_RECIPE = "LIKE_RECIPE"
-const GET_FAVORITES = "GET_FAVORITES"
-const SEARCH_FAVORITES = "SEARCH_FAVORITES"
-const LOADING_SELECTED_FAVES = "LOADING_SELECTED_FAVES"
-const LOADING_FAVES_BY_SERVINGS = "LOADING_FAVES_BY_SERVINGS"
+const SHOW_FAVORITES = "SHOW_FAVORITES"
 
-//ACTION CREATORS- these are functions that returns a 'type' and 'payload' (which represent the target)
+//***ACTION CREATORS- these are functions that returns a 'type' and 'payload' (which represent the target)
 // *Target means property in your state. 
 // Synchronous actions.
 // The difference from thunk is - Action creators return objects, and Thunk creators return functions.
 
 // RECIPE SEARCH:
-export const loadingRecipes = searchValue => {
-    return {
-        type: LOADING_RECIPES,
-        payload: {
-            searchValue
-        }
-    }
-}
-export const showRecipes = (recipes) => {
+export const showRecipes = recipesData => {
     return {
         type: SHOW_RECIPES,
         payload: {
-            recipes
+            recipesData
         }
     }
 }
-
-
-// FAVORITES:
-export const likeRecipe = likeRecipe => {
+export const showFavorites = faveRecipesData => {
     return {
-        type: LIKE_RECIPE,
+        type: SHOW_FAVORITES,
         payload: {
-            likeRecipe
-        }
-    }
-}
-export const getFavorites = favesList => {
-    return {
-        type: GET_FAVORITES,
-        payload: {
-            favesList
-        }
-    }
-}
-export const searchFavorites = favSearch => {
-    return {
-        type: SEARCH_FAVORITES,
-        payload: {
-            favSearch
-        }
-    }
-}
-export const loadingSelectedFaves = SelectedFaves => {
-    return {
-        type: LOADING_SELECTED_FAVES,
-        payload: {
-            SelectedFaves
-        }
-    }
-}
-export const loadingFavesByServings = FavServings => {
-    return {
-        type: LOADING_FAVES_BY_SERVINGS,
-        payload: {
-            FavServings
+            faveRecipesData
         }
     }
 }

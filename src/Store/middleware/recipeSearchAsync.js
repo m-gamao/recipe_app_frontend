@@ -1,8 +1,13 @@
 //THUNK ACTION CREATORS:
 // These are all asynchronous calls. Whenever you have a thunk action creator - you are making
 // an asynchronous call.
+// *recipesData is an object, and inside your state you're expecting an array value - in this case the
+// array is 'hits', on line 17 console.log(recipesData.hits)
 
-import { loadingRecipes, addRecipes } from "../reducers/manageRecipesReducer"
+// Always make sure that the Action Creator that you wish to dispatch is *IMPORTED*, see line 9, line 20.
+
+
+import { showRecipes } from "../reducers/manageRecipesReducer";
 
 
 const APP_KEY = "3822eee64683985d4b5cc5935bae9734";
@@ -12,7 +17,9 @@ export const getRecipes = (query) => {
     return dispatch => {
         return fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
         .then(res => res.json())
-        .then(recipes => dispatch({type: "SHOW_RECIPES", payload: recipes}))
+        .then(recipesData =>{
+            dispatch(showRecipes(recipesData.hits))
+        })
     }
 }  
     

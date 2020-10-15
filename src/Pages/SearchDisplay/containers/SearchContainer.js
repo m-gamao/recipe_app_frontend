@@ -25,14 +25,3 @@ class SearchContainer extends Component {
 
 export default SearchContainer;
 
-  //*Below is a react fetch to the external api for recipe query:
-  // getRecipe = query => {
-  //   fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${API_KEY}`)
-  //     .then(response => {
-  //       return response.json();
-  //     })
-  //     .then(jsonData => {
-  //       this.setState({ recipes: jsonData.hits });
-  //     });
-  // };
-
