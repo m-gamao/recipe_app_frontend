@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 //import { useDispatch } from 'react-redux';
-import FavoritesResults from './FavoritesResults';
+//import FavoritesResults from './FavoritesResults';
 
 const FavoritesForm = () => { 
     const [search, setSearch] = useState("")
@@ -29,7 +29,6 @@ const FavoritesForm = () => {
                 />
                 <button type="submit">Search</button>
             </form>
-            <FavoritesResults />
         </>
     )
 }
