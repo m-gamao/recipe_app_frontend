@@ -5,17 +5,26 @@
 // import './css/customStyles.css'
 // import SelectedItem from './components/SelectedItem';
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Home from './Home';
+import FavoritesContainer from './Pages/Favorites/containers/FavoritesContainer';
 import SearchContainer from './Pages/SearchDisplay/containers/SearchContainer';
-
+import { getFavoriteRecipes } from './Store/middleware/favoritesAsync';
 
 class App extends Component {
+
+  componentDidMount() {
+    this.props.getFavoriteRecipes()
+  }
+  
+
   render() {
     return (
       <main className="container">
         <Switch>
+            <Route exact path="/favorites" component={FavoritesContainer} />
             <Route exact path="/search" component={SearchContainer} />
             <Route exact path="/" component={Home} />
         </Switch>
@@ -24,7 +33,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { getFavoriteRecipes })(App);
     
 
 

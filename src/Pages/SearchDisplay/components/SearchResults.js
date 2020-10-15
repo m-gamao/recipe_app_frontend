@@ -6,22 +6,35 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
 import '../../../assets/SearchResults.css';
+import { likeRecipe } from '../../../Store/middleware/favoritesAsync';
 
 class SearchResults extends Component {
+
+  handleLike = event => {
+    let { recipe_name, url, image, serving_size } = event.target.parentElement.dataset
+    this.props.likeRecipe(recipe_name, url, image, serving_size)
+  }  
+
   render() {
-    //debugger
-    console.log(this.props.recipesData)
+
     return (
       <div id="recipes-container">
         {this.props.recipesData.map((hit, index) => (
-          <div className="recipe-list" key={index}>
+          <div 
+            className="recipe-list" 
+            key={index}
+            data-recipe_name={hit.recipe.label}
+            data-url={hit.recipe.url}
+            data-image={hit.recipe.image}
+            data-serving_size={hit.recipe.yield}
+          >
             <h2>{hit.recipe.label}</h2>
-            <a href={hit.recipe.url} target="_blank">
+            <a href={hit.recipe.url} target="_blank" rel="noopener noreferrer">
               <img src={hit.recipe.image} alt="recipe-thumbnail"/>
             </a>
             <h4>Yield: { hit.recipe.yield }</h4>
+            <button onClick={this.handleLike}>LIKE</button>  
           </div>
         ))}
       </div>
@@ -30,7 +43,7 @@ class SearchResults extends Component {
 }
 
 const mapStateToProps = state => ({
-  recipesData: state.recipesData
+  recipesData: state.recipesReducer.recipesData
 })
 
-export default connect(mapStateToProps, null)(SearchResults);
+export default connect(mapStateToProps, { likeRecipe })(SearchResults);

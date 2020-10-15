@@ -1,12 +1,11 @@
 
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { getServings } from '../../../Store/middleware/ServingsSearchAsync';
-import ServingsResults from './ServingsResults';
+//import { useDispatch } from 'react-redux';
+import FavoritesResults from './FavoritesResults';
 
-const ServingsForm = () => { 
+const FavoritesForm = () => { 
     const [search, setSearch] = useState("")
-    const dispatch = useDispatch()
+    //const dispatch = useDispatch()
 
     const handleOnChange = event => {
         setSearch(event.target.value)
@@ -14,7 +13,7 @@ const ServingsForm = () => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        dispatch(getServings(search))
+        //dispatch(getFavorites(search))
         setSearch("")
     };
     
@@ -30,9 +29,9 @@ const ServingsForm = () => {
                 />
                 <button type="submit">Search</button>
             </form>
-            <ServingsResults />
+            <FavoritesResults />
         </>
     )
 }
 
-export default ServingsForm
+export default FavoritesForm

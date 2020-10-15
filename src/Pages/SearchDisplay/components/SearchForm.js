@@ -16,7 +16,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getRecipes } from '../../../Store/middleware/recipeSearchAsync';
-import SearchResults from './SearchResults';
 
 const SearchForm = () => { 
     const [search, setSearch] = useState("")
@@ -44,7 +43,6 @@ const SearchForm = () => {
                 />
                 <button type="submit">Search</button>
             </form>
-            <SearchResults />
         </>
     )
 }

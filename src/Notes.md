@@ -5,7 +5,19 @@
 -Function Components - deals with the look of things
 
 
+TROUBLESHOOTING QUESTIONS:
+10/14: 
+1. Is my async for faves and servings correct?
+2. I want the servings search to only search from the results of the favorites search. So
+that means that it will not be fetching - it will really use the data from the faveRecipeResults and filter that data. So probably we are not fetching at all for the servings search form. We are 
+only taking the 'faveRecipeData' and putting it through a filter by size, using <,>,=
 
+FAVORITES:
+BACKEND--
+CONTROLLER--
+1. CREATE- to like
+2. DELETE- to unlike
+3. INDEX- to list
 
 
 
