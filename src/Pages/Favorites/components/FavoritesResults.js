@@ -8,28 +8,30 @@
   import { connect } from 'react-redux';
   
   import '../../../assets/SearchResults.css';
-import { clearFilterResults, largeYield, mediumYield, partyYield, smallYield } from '../../../Store/reducers/manageFavorites';
-  
+import { filterFavorites } from '../../../Store/reducers/manageFavorites';
+
+// I took out clearFilterResults from the import above
+
 class FavoritesResults extends Component {
 
     handleSmallYieldFilter = () => {
-        this.props.clearFilterResults()
-        this.props.smallYield(this.props.favorites)
+        const results = this.props.favorites.filter(fav => fav.serving_size < 4)
+        this.props.filterFavorites(results)
     }
 
     handleMediumYieldFilter = () => {
-        this.props.clearFilterResults()
-        this.props.mediumYield(this.props.favorites)
+        const results = this.props.favorites.filter(fav => fav.serving_size > 3 && fav.serving_size < 7)
+        this.props.filterFavorites(results)
     }
 
     handleLargeYieldFilter = () => {
-        this.props.clearFilterResults()
-        this.props.largeYield(this.props.favorites)
+        const results = this.props.favorites.filter(fav => fav.serving_size > 6 && fav.serving_size < 11)
+        this.props.filterFavorites(results)
     }
 
     handlePartyYieldFilter = () => {
-        this.props.clearFilterResults()
-        this.props.partyYield(this.props.favorites)
+        const results = this.props.favorites.filter(fav => fav.serving_size > 10)
+        this.props.filterFavorites(results)
     }
 
     render() {
@@ -56,7 +58,7 @@ class FavoritesResults extends Component {
                     <div className="sort_btn">
                         <button 
                             style={{ width: '150px' }}
-                            onClick={this.handleLargeYieldFilter}
+                            onClick={ this.handleLargeYieldFilter }
                         >
                             Large (7-10)
                         </button>
@@ -91,5 +93,5 @@ class FavoritesResults extends Component {
     results: state.favsReducer.results
   })
   
-  export default connect(mapStateToProps, { smallYield, mediumYield, largeYield, partyYield, clearFilterResults })(FavoritesResults);
-  
+  export default connect(mapStateToProps, { filterFavorites })(FavoritesResults);
+//   also removed clearFilterResults from here too

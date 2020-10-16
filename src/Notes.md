@@ -1,3 +1,8 @@
+After graduation, do these following upgrades:
+1. Add Yummly API - replace edamam's api with it.
+
+
+
 *Inside of a JS expression {{}} you can use the template literals.
 
 -Containers: should have all the logic. 
