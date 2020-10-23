@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
     return (
-        <div>
+        <div className="home">
             <div className="homepage_pic">
                 <img src='/assets/images/homepage_pic.jpeg' alt="homepage_pic" /> 
             </div> 

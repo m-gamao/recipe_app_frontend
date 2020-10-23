@@ -129,7 +129,18 @@
   
   /* BACKGROUND PIC ********************************************************* */
   
+  .home {
+    border: 2px solid blue;
+    width: 100%;
+  }
   .homepage_pic {
-    background: no-repeat center fixed;     
-    background-size: cover;
+    /* background: no-repeat center fixed;      */
+    /* background-size: cover; */
+    border: 2px solid red;
+    width: 100%;
   } 
+
+  .homepage_pic img {
+    display: block;
+    width: 100%;
+  }
