@@ -43,8 +43,7 @@ const SHOW_FAVORITES = "SHOW_FAVORITES"
 // *Target means property in your state. 
 // Synchronous actions.
 // The difference from thunk is - Action creators return objects, and Thunk creators return functions.
-
-// RECIPE SEARCH:
+// For recipe search:
 export const showRecipes = recipesData => {
     return {
         type: SHOW_RECIPES,

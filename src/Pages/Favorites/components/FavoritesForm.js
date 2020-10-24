@@ -1,11 +1,14 @@
 
 import React, { useState } from 'react';
-//import { useDispatch } from 'react-redux';
-//import FavoritesResults from './FavoritesResults';
+import { useDispatch, useSelector } from 'react-redux';
+import { filterFavorites } from '../../../Store/reducers/manageFavorites';
 
 const FavoritesForm = () => { 
     const [search, setSearch] = useState("")
-    //const dispatch = useDispatch()
+    const state = useSelector(state => ({
+        favorites: state.favsReducer.favorites
+    }))
+    const dispatch = useDispatch()
 
     const handleOnChange = event => {
         setSearch(event.target.value)
@@ -13,7 +16,10 @@ const FavoritesForm = () => {
 
     const handleSubmit = event => {
         event.preventDefault()
-        //dispatch(getFavorites(search))
+        const results = state.favorites.filter(fav => {
+            return fav.recipe_name.includes(search)
+        })
+        dispatch(filterFavorites(results))
         setSearch("")
     };
     

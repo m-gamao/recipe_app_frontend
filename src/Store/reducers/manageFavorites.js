@@ -5,8 +5,8 @@
 
 // Process: Your reducer (line 22) is listening for a dispatch. Once the dispatch is made, the
 // action creator's "action type" is checked against the cases in the switch case block within the 
-// reducer. Once it finds a match, it returns logic that updates the state in the store. Inside of 
-// the logic that is being returned (ie Lines 28-31),
+// reducer. Once it finds a match, it returns logic that updates the state in the store, based on the
+// payload passed in (ie. lines 28-31). Payload is the data being sent by the action to update the store.
 
 
 //****INITIAL STATE******************************************************************** */
@@ -15,13 +15,12 @@ const initialState = {
     results: []
 }
 
-//****ACTION TYPES****************************************************************************** */
+//****ACTION TYPES**(Serves as a reference for naming)*************************************************************************** */
 const LOAD_FAVORITES = "LOAD_FAVORITES"
 const ADD_FAVORITE = "ADD_FAVORITE"
 const FILTER_FAVORITES = "FILTER_FAVORITES"
 
-
-//***REDUCER (aka PURE FUNCTION)************************************************************* */
+//***REDUCER (aka PURE FUNCTION)**(STEP 2)************************************************************ */
 export default function manageFavorites(state = initialState, action) {
     switch(action.type) {
         case LOAD_FAVORITES:
@@ -45,7 +44,7 @@ export default function manageFavorites(state = initialState, action) {
 } 
 
 
-//****ACTION CREATORS************************************************************************** */
+//***ACTION CREATORS**(STEP 1)************************************************************************* */
 export const loadFavorites = favorites => {
     return {
         type: LOAD_FAVORITES,
@@ -63,7 +62,6 @@ export const addFavorite = favorite => {
         }
     }
 }
-
 
 export const filterFavorites = results => {
     return {

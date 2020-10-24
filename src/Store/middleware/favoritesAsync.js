@@ -1,5 +1,8 @@
 import { addFavorite, loadFavorites } from "../reducers/manageFavorites"
 
+// The getFavoriteRecipes method should produce a list of the favorites matched to the keyword searched by 
+// the user.
+
 export const getFavoriteRecipes = () => {
     return dispatch => {
         fetch('http://localhost:3001/api/v1/favorites')
