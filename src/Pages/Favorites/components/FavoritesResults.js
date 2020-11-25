@@ -34,6 +34,15 @@ class FavoritesResults extends Component {
         this.props.filterFavorites(results)
     }
 
+    handleSortResultsAlphabetically = () => {
+        const results = this.props.favorites.sort(function(a, b) {
+            if(a.recipe_name.toLowerCase() < b.recipe_name.toLowerCase()) return -1;
+            if(a.recipe_name.toLowerCase() > b.recipe_name.toLowerCase()) return 1;
+            return 0
+        })
+        this.props.filterFavorites(results)
+    }
+
     render() {
         
         return (
@@ -71,6 +80,14 @@ class FavoritesResults extends Component {
                             Party (11+)
                         </button>
                     </div>
+                    <div className="alphasort_btn">
+                        <button 
+                            style={{ width: '150px' }}
+                            onClick={this.handleSortResultsAlphabetically}
+                        >
+                            Sort Results (A-B)
+                        </button>
+                    </div>
                 </div>
                 <div id="recipes-container">
                 {this.props.results.map((recipe, index) => (
@@ -88,6 +105,24 @@ class FavoritesResults extends Component {
     };
 }
   
+class SortButton extends Component {
+
+    render() {
+        
+        return (
+            <>
+                <div className="sort_buttons" style={{ display: 'flex', margin: '50px 0', width: '100%' }}>
+                    <div className="sort_btn">
+                        <button 
+                            style={{ width: '150px' }}
+                            onClick={ this.handleSortResultsAlphabetically }
+                        >
+                            Sort Results Alphabetically
+                        </button></div>
+                    </div></>
+                    )}
+}
+
   const mapStateToProps = state => ({
     favorites: state.favsReducer.favorites,
     results: state.favsReducer.results

@@ -39,10 +39,12 @@ export default function manageRecipesReducer(state = initialState, action) {
 const SHOW_RECIPES = "SHOW_RECIPES"
 const SHOW_FAVORITES = "SHOW_FAVORITES"
 
-//***ACTION CREATORS- these are functions that returns a 'type' and 'payload' (which represent the target)
+//***ACTION CREATORS- these are functions that returns a 'type' and 'payload' 
+  //(which represent the target)
 // *Target means property in your state. 
 // Synchronous actions.
-// The difference from thunk is - Action creators return objects, and Thunk creators return functions.
+// The difference from thunk is - Action creators return objects, and Thunk creators return 
+  //functions.
 // For recipe search:
 export const showRecipes = recipesData => {
     return {
