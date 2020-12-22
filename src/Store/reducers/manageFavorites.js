@@ -3,12 +3,11 @@
   // obviously must first be "created". And then they are passed to reducers in the form of 
   // action types.
 
-// import { act } from "react-dom/test-utils"
 // This reducer file is set up in the "Duck Pattern", where you put all related code in one file 
 // so that you don't have to create a lot of files and code so many imports and exports. This file 
 // contains the: initial state, action types, pure function, and action creators.
 
-// Process: The reducer (line 32) is listening for a dispatch. Once the dispatch is made, the
+// Process: The reducer is listening for a dispatch. Once the dispatch is made, the
 // action creator's "action type" is checked against the cases in the switch case block within the 
 // reducer. Once it finds a match, it returns logic that updates the state in the store, based 
   // on the payload passed in (ie. lines 28-31). Payload is the data being sent by the action 
