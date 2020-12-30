@@ -1,3 +1,8 @@
+Homework: 
+1. Get the like feature to work where you can like any of your favorites, but it does not persist or connect to the rails backend. Likes reset to 0 after page refreshes
+2. In a separate branch, get the likes of each favorite to persist AND connect to redux. SO if we refresh the page the number of likes remain for each favorite
+
+_______________________________________________________________
 ## Parts:
 1. App.js: Renders the home page with button navigation. *Done*
 2. Form.js: renders the search form that the user enters a keyword for recipe search.

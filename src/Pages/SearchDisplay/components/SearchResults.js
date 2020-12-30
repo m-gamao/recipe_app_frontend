@@ -12,6 +12,7 @@ import { likeRecipe } from '../../../Store/middleware/favoritesAsync';
 class SearchResults extends Component {
 
   handleLike = event => {
+    //let recipe_name = event.target.parentElement.dataset.recipe_name
     let { recipe_name, url, image, serving_size } = event.target.parentElement.dataset
     this.props.likeRecipe(recipe_name, url, image, serving_size)
   }  
@@ -34,7 +35,7 @@ class SearchResults extends Component {
               <img src={hit.recipe.image} alt="recipe-thumbnail"/>
             </a>
             <h4>Yield: { hit.recipe.yield }</h4>
-            <button onClick={this.handleLike}>LIKE</button>  
+            <button onClick={this.handleLike}>Add Favorite</button>  
           </div>
         ))}
       </div>

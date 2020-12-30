@@ -13,6 +13,14 @@ import { filterFavorites } from '../../../Store/reducers/manageFavorites';
 // I took out clearFilterResults from the import above
 
 class FavoritesResults extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            count: 0
+        };
+    }
+
+  // change code above this line
 
     handleSmallYieldFilter = () => {
         const results = this.props.favorites.filter(fav => fav.serving_size < 4)
@@ -42,6 +50,22 @@ class FavoritesResults extends Component {
         })
         this.props.filterFavorites(results)
     }
+    
+    increment() {
+        this.setState({
+          count: this.state.count + 1
+        });
+    }
+
+    // handleClick() {
+    //     this.increment();
+    // }
+
+    reset() {
+        this.setState({
+        count: 0
+      });
+    };
 
     render() {
         
@@ -97,6 +121,10 @@ class FavoritesResults extends Component {
                         <img src={recipe.image} alt="recipe-thumbnail"/>
                     </a>
                     <h4>Yield: { recipe.serving_size }</h4>
+                        <div>
+                            <button className='inc' onClick={(e) => this.increment(e)}>Like</button>
+                            <h1>Count: {this.state.count}</h1>
+                        </div>
                     </div>
                 ))}
                 </div>

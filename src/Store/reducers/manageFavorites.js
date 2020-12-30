@@ -52,6 +52,7 @@ export default function manageFavorites(state = initialState, action) {
 
 
 //STEP 1: ACTION CREATORS ************************************************************************* */
+// The action creators below get passed down to child components as props (see the favoritesresults.js file)
 export const loadFavorites = favorites => {
     return {
         type: LOAD_FAVORITES,
