@@ -9,6 +9,7 @@
   
   import '../../../assets/SearchResults.css';
 import { filterFavorites } from '../../../Store/reducers/manageFavorites';
+import Recipe from './Recipe';
 
 // I took out clearFilterResults from the import above
 
@@ -114,47 +115,44 @@ class FavoritesResults extends Component {
                     </div>
                 </div>
                 <div id="recipes-container">
-                {this.props.results.map((recipe, index) => (
-                    <div className="recipe-list" key={index}>
-                    <h2>{recipe.recipe_name}</h2>
-                    <a href={recipe.url} target="_blank" rel="noopener noreferrer">
-                        <img src={recipe.image} alt="recipe-thumbnail"/>
-                    </a>
-                    <h4>Yield: { recipe.serving_size }</h4>
-                        <div>
-                            <button className='inc' onClick={(e) => this.increment(e)}>Like</button>
-                            <h1>Count: {this.state.count}</h1>
-                        </div>
-                    </div>
-                ))}
-                </div>
-            </>
-        ) 
-    };
-}
-  
-class SortButton extends Component {
-
-    render() {
-        
-        return (
-            <>
-                <div className="sort_buttons" style={{ display: 'flex', margin: '50px 0', width: '100%' }}>
-                    <div className="sort_btn">
-                        <button 
-                            style={{ width: '150px' }}
-                            onClick={ this.handleSortResultsAlphabetically }
-                        >
-                            Sort Results Alphabetically
-                        </button></div>
-                    </div></>
+                <div className="recipe-list" key={index}>
+                    {this.props.results.map((recipe, index) => (
+                        <Recipe
+                            recipe={recipe.id}
+                            likeCount={recipe.likeCount}
+                            
+                        />
                     )}
-}
+
+
+                </div>
+            </div>
+        )
+    };
+
+  
+// class SortButton extends Component {
+
+//     render() {
+        
+//         return (
+//             <>
+//                 <div className="sort_buttons" style={{ display: 'flex', margin: '50px 0', width: '100%' }}>
+//                     <div className="sort_btn">
+//                         <button 
+//                             style={{ width: '150px' }}
+//                             onClick={ this.handleSortResultsAlphabetically }
+//                         >
+//                             Sort Results Alphabetically
+//                         </button></div>
+//                     </div></>
+//                     )}
+// }
 
   const mapStateToProps = state => ({
     favorites: state.favsReducer.favorites,
     results: state.favsReducer.results
   })
-  
+
   export default connect(mapStateToProps, { filterFavorites })(FavoritesResults);
 //   also removed clearFilterResults from here too
