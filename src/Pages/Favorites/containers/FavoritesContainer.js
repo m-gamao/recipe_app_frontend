@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import FavoritesForm from "../components/FavoritesForm";
 import "../../../assets/SearchContainer.css";
 import FavoritesResults from "../components/FavoritesResults";
+import Recipe from "../components/Recipe"
   
   
   class FavoritesContainer extends Component {

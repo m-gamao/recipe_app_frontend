@@ -6,15 +6,17 @@ class Recipe extends React.Component {
         super(props)
 
         this.state = {
-            likeCount: 0
+            likes: 0
         }
     }
 
-    incrementLike = () => {
-        this.setState({
-            likeCount: this.state.likeCount += 1
-        })
-    }
+    addLike = () => {     // addLike is a click handler
+        let newCount = this.state.likes + 1;
+          this.setState({
+          likes: newCount
+        });
+      };
+    
 
     render() {
         return (
@@ -24,7 +26,7 @@ class Recipe extends React.Component {
                     <img src={this.props.image} alt="recipe-thumbnail"/>
                 </a>
                 <h4>Yield: { this.props.servingSize }</h4>
-                <button onClick={this.incrementLike}>likes ({this.state.likeCount} )</button>
+                <button onClick={this.addLike} id={this.props.recipeId}>Likes: {this.state.likes} </button>
             </div>
         )
     }

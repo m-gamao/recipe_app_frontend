@@ -3,11 +3,15 @@
 // Line 21 is the link the user clicks to navigate to the single recipe they choose 
 // This is a class component - you cannot use hooks in a class component.
   // Instead - you have to use the CONNECT function - MSTP/MDTP are dependent on the CONNECT function.
+// The properties for <Recipe/> gets established in this file on line 120. You are pulling in the 
+// data from the backend rails app, using the names from the db tables, then setting that data to new
+// prop names, which you will then pass to the Recipe component.
 
-  import React, { Component } from 'react';
-  import { connect } from 'react-redux';
+
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
   
-  import '../../../assets/SearchResults.css';
+import '../../../assets/SearchResults.css';
 import { filterFavorites } from '../../../Store/reducers/manageFavorites';
 import Recipe from './Recipe';
 
@@ -115,40 +119,27 @@ class FavoritesResults extends Component {
                     </div>
                 </div>
                 <div id="recipes-container">
-                <div className="recipe-list" key={index}>
+                <div className="recipe-list">
                     {this.props.results.map((recipe, index) => (
                         <Recipe
-                            recipe={recipe.id}
-                            likeCount={recipe.likeCount}
-                            
+                            key={recipe.id}
+                            name={recipe.recipe_name}
+                            image={recipe.image}
+                            url={recipe.url}
+                            servingSize={recipe.serving_size}
+                            likes={recipe.likes}                            
                         />
-                    )}
+                    ))}
 
 
                 </div>
             </div>
+
+            </>
         )
     };
-
-  
-// class SortButton extends Component {
-
-//     render() {
-        
-//         return (
-//             <>
-//                 <div className="sort_buttons" style={{ display: 'flex', margin: '50px 0', width: '100%' }}>
-//                     <div className="sort_btn">
-//                         <button 
-//                             style={{ width: '150px' }}
-//                             onClick={ this.handleSortResultsAlphabetically }
-//                         >
-//                             Sort Results Alphabetically
-//                         </button></div>
-//                     </div></>
-//                     )}
-// }
-
+}
+           
   const mapStateToProps = state => ({
     favorites: state.favsReducer.favorites,
     results: state.favsReducer.results

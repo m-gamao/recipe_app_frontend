@@ -1,3 +1,5 @@
+//event.target.value is the element in the html that you are targeting-the data value that was 
+//provided by the user.
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';

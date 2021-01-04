@@ -1,7 +1,8 @@
 // useSelector is a hook that allows you to operate like mapStatetoProps.  It allows you to go
   // into store and get the slice of state of want. In this case it is updating your favorites. 
 // const search is a string, and setSearch allows you to update that string. It is like setState.
-// favsReducer is the alias you give to the favorites reducer.
+// favsReducer is the alias you give to the favorites reducer. You declared this in the
+// rootReducer.js file in the Store folder.
 
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
@@ -21,6 +22,7 @@ const FavoritesForm = () => {
     const handleSubmit = event => {
         event.preventDefault()
         const results = state.favorites.filter(fav => {
+            console.log(fav)
             return fav.recipe_name.includes(search)
         })
         dispatch(filterFavorites(results))
