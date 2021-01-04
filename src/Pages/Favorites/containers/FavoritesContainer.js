@@ -17,7 +17,6 @@ import Recipe from "../components/Recipe"
           <h1>Find a favorite by keyword</h1>
           <FavoritesForm/>
           <FavoritesResults/>
-          <Recipe/>
         </div>
       );
     }
