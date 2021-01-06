@@ -55,22 +55,7 @@ class FavoritesResults extends Component {
         })
         this.props.filterFavorites(results)
     }
-    
-    increment() {
-        this.setState({
-          count: this.state.count + 1
-        });
-    }
 
-    // handleClick() {
-    //     this.increment();
-    // }
-
-    reset() {
-        this.setState({
-        count: 0
-      });
-    };
 
     render() {
         
@@ -139,7 +124,8 @@ class FavoritesResults extends Component {
         )
     };
 }
-           
+
+//"favorites" is called in the favoritesForm.js where you are reaching into state.
   const mapStateToProps = state => ({
     favorites: state.favsReducer.favorites,
     results: state.favsReducer.results

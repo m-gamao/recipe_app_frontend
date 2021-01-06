@@ -17,6 +17,10 @@ class Recipe extends React.Component {
         });
       };
     
+    componentDidMount(props) {
+        this.setState({ likes: this.props.likes }) //set the likes value of the state to the likes value of the props.
+        //that way you can call in the props from the parent and it would save to the db
+    }
 
     render() {
         return (

@@ -93,7 +93,7 @@ export const saveLikes = likes => {
     return {
         type: SAVE_LIKES,
         payload: {
-            results
+            likes
         }
     }
 }

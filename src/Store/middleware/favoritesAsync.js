@@ -4,8 +4,10 @@
       // 2a. When the backend is updated (and json is returned), it dispatches an update to 
           // the frontend/store), via a reducer.(DISPATCH 2) 
             // -The reducer function is a result of the action creator in the reducer file.)
+//This file fetches from and posts to my Rails Backend API.
+//Must use BACKTICKS on the fetch url itself.
 
-import { addFavorite, loadFavorites } from "../reducers/manageFavorites"
+import { addFavorite, loadFavorites, saveLikes } from "../reducers/manageFavorites"
 
 // The getFavoriteRecipes method should produce a list of the favorites matched to the keyword 
    // searched by the user.
@@ -26,7 +28,7 @@ export const likeRecipe = (recipe_name, url, image, serving_size) => {
             recipe_name,
             url,
             image,
-            serving_size
+            serving_size, 
         }
         fetch('http://localhost:3001/api/v1/favorites', {
             method: 'POST',
@@ -38,6 +40,26 @@ export const likeRecipe = (recipe_name, url, image, serving_size) => {
         .then(res => res.json())
         .then(data => {
             dispatch(addFavorite(data))     
+        })
+    }
+}
+
+export const likesCount = (recipe_id, likes) => {
+    return dispatch => {
+        const data = {
+            recipe_id,
+            likes
+        }
+        fetch(`http://localhost:3001/api/v1/favorites/${recipe_id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body:  JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+            dispatch(saveLikes(data))     
         })
     }
 }

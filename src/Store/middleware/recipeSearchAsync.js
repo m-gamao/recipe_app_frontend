@@ -5,7 +5,7 @@
 // array is 'hits', on line 17 console.log(recipesData.hits)
 
 // Always make sure that the Action Creator that you wish to dispatch is *IMPORTED*, see line 9, line 20.
-
+// This file fetches recipe data from the 3rd Party API that contains all the recipe database.
 
 import { showRecipes } from "../reducers/manageRecipesReducer";
 
