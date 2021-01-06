@@ -10,15 +10,23 @@ class Recipe extends React.Component {
         }
     }
 
-    addLike = () => {     // addLike is a click handler
-        let newCount = this.state.likes + 1;
-          this.setState({
-          likes: newCount
+    addLike = () => {     // addLike is a click handler. 
+        this.setState(prevState => {    
+            /* setState's structure allows you to make a copy of the current state and then 
+            you can alter that instead of mutating the actual state of the component which you 
+            cannot do. That is why you use prevState here. PrevState is the copy, and this.setState
+            is persisting it to your state. Whatever property you access from the copy and changes
+            you make to it becomes the new state of that property.
+            */
+            return {
+                likes: prevState.likes + 1
+            }
         });
       };
     
 
     render() {
+
         return (
             <div className="recipeListItem" >
                 <h2>{this.props.name}</h2>
