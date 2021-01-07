@@ -7,7 +7,7 @@
 //This file fetches from and posts to my Rails Backend API.
 //Must use BACKTICKS on the fetch url itself.
 
-import { addFavorite, loadFavorites, saveLikes } from "../reducers/manageFavorites"
+import { addFavorite, loadFavorites, favoriteLiked } from "../reducers/manageFavorites"
 
 // The getFavoriteRecipes method should produce a list of the favorites matched to the keyword 
    // searched by the user.
@@ -44,13 +44,12 @@ export const likeRecipe = (recipe_name, url, image, serving_size) => {
     }
 }
 
-export const likesCount = (recipe_id, likes) => {
+export const incrementFavLikeCounter = (favorite_id) => {
     return dispatch => {
         const data = {
-            recipe_id,
-            likes
+            favorite_id
         }
-        fetch(`http://localhost:3001/api/v1/favorites/${recipe_id}`, {
+        fetch(`http://localhost:3001/api/v1/favorites/${favorite_id}/likes`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -59,7 +58,11 @@ export const likesCount = (recipe_id, likes) => {
         })
         .then(res => res.json())
         .then(data => {
-            dispatch(saveLikes(data))     
+            console.log(data)
+            dispatch(favoriteLiked(data))     
         })
     }
 }
+
+// NOTE: Once we pass the data into the 'favoriteLiked' action, the switch case statement
+   //does something with the payload (data), and the page is re-rendered.

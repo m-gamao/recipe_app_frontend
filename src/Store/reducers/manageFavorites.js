@@ -29,7 +29,7 @@ const initialState = {
 const LOAD_FAVORITES = "LOAD_FAVORITES"
 const ADD_FAVORITE = "ADD_FAVORITE"
 const FILTER_FAVORITES = "FILTER_FAVORITES"
-const SAVE_LIKES = "SAVE_LIKES"
+const FAVORITE_LIKED = "FAVORITE_LIKED"
 
 //STEP 2: REDUCER (aka PURE FUNCTION)************************************************************** */
 export default function manageFavorites(state = initialState, action) {
@@ -49,15 +49,19 @@ export default function manageFavorites(state = initialState, action) {
                 ...state,
                 results: action.payload.results
             }
-        case SAVE_LIKES:
+        case FAVORITE_LIKED:
             return {
                 ...state,
-                likes: action.payload.likes
+                likes: [...state.likes, action.payload.like]
             }
         default: 
             return state;
     }
 } 
+
+// any changes made to state invokes a page re-render reflecting all of the new changes (i.e action.payload)
+
+
 
 
 //STEP 1: ACTION CREATORS ************************************************************************* */
@@ -89,11 +93,11 @@ export const filterFavorites = results => {
     }
 }
 
-export const saveLikes = likes => {
+export const favoriteLiked = like => {
     return {
-        type: SAVE_LIKES,
+        type: FAVORITE_LIKED,
         payload: {
-            likes
+            like
         }
     }
 }

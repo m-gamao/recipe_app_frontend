@@ -1,28 +1,31 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { incrementFavLikeCounter } from '../../../Store/middleware/favoritesAsync';
 
 
 class Recipe extends React.Component {
-    constructor(props) {
-        super(props)
-
-        this.state = {
-            likes: 0
-        }
+    state = {
+        likes: this.props.likes.length
     }
 
-    addLike = () => {     // addLike is a click handler
-        let newCount = this.state.likes + 1;
-          this.setState({
-          likes: newCount
+    // Using the setState method to increment the count of likes for the current recipe.
+    handlePersistLike = () => {
+        this.setState(prevState => {
+            return {
+                likes: prevState.likes + 1
+            }
         });
-      };
-    
-    componentDidMount(props) {
-        this.setState({ likes: this.props.likes }) //set the likes value of the state to the likes value of the props.
-        //that way you can call in the props from the parent and it would save to the db
-    }
+        this.props.incrementFavLikeCounter(this.props.favorite_id)
+    }    
+
+    // componentDidMount() {
+    //     // this.setState({ likes: this.props.likes }) //set the likes value of the state to the likes value of the props.
+    //     //that way you can call in the props from the parent and it would save to the db
+    // }
+
 
     render() {
+
         return (
             <div className="recipeListItem" >
                 <h2>{this.props.name}</h2>
@@ -30,10 +33,16 @@ class Recipe extends React.Component {
                     <img src={this.props.image} alt="recipe-thumbnail"/>
                 </a>
                 <h4>Yield: { this.props.servingSize }</h4>
-                <button onClick={this.addLike} id={this.props.recipeId}>Likes: {this.state.likes} </button>
+                <button onClick={this.handlePersistLike} id={this.props.recipeId}>Likes: {this.state.likes} </button>
             </div>
         )
     }
 }
 
-export default Recipe; 
+const mapDispatchToProps = dispatch => {
+    return {
+        incrementFavLikeCounter: id => dispatch(incrementFavLikeCounter(id))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Recipe); 

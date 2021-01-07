@@ -112,7 +112,8 @@ class FavoritesResults extends Component {
                             image={recipe.image}
                             url={recipe.url}
                             servingSize={recipe.serving_size}
-                            likes={recipe.likes}                            
+                            likes={recipe.likes}  
+                            favorite_id={recipe.id}                          
                         />
                     ))}
 
