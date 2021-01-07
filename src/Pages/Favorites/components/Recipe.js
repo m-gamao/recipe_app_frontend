@@ -1,3 +1,9 @@
+//Props are like your organs - you can't just go in and change it (blood type, etc)- parent comp
+   //must change it.  As far as the child component is concerned it is permanent for that.
+//State is changeable like hair color, color contacts, nail color - most cases
+   //are temporary. No persistence involved. State is usually based on *user interaction* with 
+   //your component. 
+
 import React from 'react';
 
 
