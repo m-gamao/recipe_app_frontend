@@ -5,3 +5,8 @@
   background-color: transparent;
   border-radius: 6px;
 }
+
+.recipes-container {
+  box-sizing: border-box;
+}
+

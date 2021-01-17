@@ -17,9 +17,19 @@ class SearchResults extends Component {
     this.props.likeRecipe(recipe_name, url, image, serving_size)
   }  
 
+  splitEvery = (array, length) =>
+  array.reduce(
+    (result, item, index) => {
+      if ( index % length === 0 ) result.push([])
+      result[Math.floor(index / length)].push(item)
+      return result
+    },
+    []
+  )
   render() {
 
     return (
+      
       <div id="recipes-container">
         {this.props.recipesData.map((hit, index) => (
           <div 

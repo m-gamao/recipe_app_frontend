@@ -1,0 +1,30 @@
+div#main {
+}
+
+div#recipes_container {
+  width: 100%;
+}
+
+div#recipes_container div.recipe_list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  row-gap: 20px;
+}
+
+div#recipes_container div.recipe_list div.recipeListItem {
+  width: 275px;
+}
+
+div.recipeListItem div.image_wrapper {
+  width: 100%;
+}
+
+div.recipeListItem a {
+  display: block;
+  width: 100%;
+}
+
+div.recipeListItem div.image_wrapper a img {
+  width: 100%;
+}
