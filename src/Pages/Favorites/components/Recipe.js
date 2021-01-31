@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { incrementFavLikeCounter } from "../../../Store/middleware/favoritesAsync";
+import Heart from "react-animated-heart";
 
 class Recipe extends React.Component {
   state = {
@@ -31,10 +32,14 @@ class Recipe extends React.Component {
           </a>
         </div>
         <h3>{this.props.name}</h3>
-        <h4>Yield: {this.props.servingSize}</h4>
-        <button onClick={this.handlePersistLike} id={this.props.recipeId}>
+        <h4>
+          Yield: {this.props.servingSize}
+          <br></br>
           Likes: {this.state.likes}{" "}
-        </button>
+        </h4>
+        <div className="HeartButton">
+          <Heart onClick={this.handlePersistLike} id={this.props.recipeId} />
+        </div>
       </div>
     );
   }

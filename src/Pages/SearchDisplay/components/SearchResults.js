@@ -21,12 +21,12 @@ class SearchResults extends Component {
     this.props.saveRecipe(recipe_name, url, image, serving_size);
   };
 
-  splitEvery = (array, length) =>
-    array.reduce((result, item, index) => {
-      if (index % length === 0) result.push([]);
-      result[Math.floor(index / length)].push(item);
-      return result;
-    }, []);
+  // splitEvery = (array, length) =>
+  //   array.reduce((result, item, index) => {
+  //     if (index % length === 0) result.push([]);
+  //     result[Math.floor(index / length)].push(item);
+  //     return result;
+  //   }, []);
 
   render() {
     return (

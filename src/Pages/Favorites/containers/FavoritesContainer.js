@@ -12,7 +12,7 @@ class FavoritesContainer extends Component {
   render() {
     return (
       <div id="main">
-        <h1>Find a favorite by keyword</h1>
+        <h1>Saved Recipes</h1>
         <FavoritesForm />
         <FavoritesResults />
       </div>
