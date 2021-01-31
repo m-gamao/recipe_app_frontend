@@ -25,12 +25,12 @@ class Recipe extends React.Component {
   render() {
     return (
       <div className="recipeListItem">
-        <h2>{this.props.name}</h2>
         <div className="image_wrapper">
           <a href={this.props.url} target="_blank" rel="noopener noreferrer">
             <img src={this.props.image} alt="recipe-thumbnail" />
           </a>
         </div>
+        <h3>{this.props.name}</h3>
         <h4>Yield: {this.props.servingSize}</h4>
         <button onClick={this.handlePersistLike} id={this.props.recipeId}>
           Likes: {this.state.likes}{" "}

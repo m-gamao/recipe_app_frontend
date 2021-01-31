@@ -130,10 +130,12 @@
   /* background: rgba(204, 204, 204, 0.5); */
 }
 
-.container {
+/* .container {
   border: 3px solid red;
   width: 100%;
-}
+  position: absolute;
+  /* top: 15%;
+  right: 5%; */
 
 /* BACKGROUND PIC ********************************************************* */
 
