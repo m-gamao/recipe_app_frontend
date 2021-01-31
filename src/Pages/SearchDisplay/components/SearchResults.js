@@ -7,10 +7,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../../../assets/SearchResults.css";
-import { likeRecipe } from "../../../Store/middleware/favoritesAsync";
+import { saveRecipe } from "../../../Store/middleware/favoritesAsync";
 
 class SearchResults extends Component {
-  handleLike = (event) => {
+  handleSave = (event) => {
     //let recipe_name = event.target.parentElement.dataset.recipe_name
     let {
       recipe_name,
@@ -18,7 +18,7 @@ class SearchResults extends Component {
       image,
       serving_size,
     } = event.target.parentElement.dataset;
-    this.props.likeRecipe(recipe_name, url, image, serving_size);
+    this.props.saveRecipe(recipe_name, url, image, serving_size);
   };
 
   splitEvery = (array, length) =>
@@ -45,8 +45,8 @@ class SearchResults extends Component {
             </a>
             <h2>{hit.recipe.label}</h2>
             <h4>Yield: {hit.recipe.yield}</h4>
-            <button onClick={this.handleLike}>
-              <h5>Add to Favorites</h5>
+            <button onClick={this.handleSave}>
+              <h5>Save</h5>
             </button>
           </div>
         ))}
@@ -59,4 +59,4 @@ const mapStateToProps = (state) => ({
   recipesData: state.recipesReducer.recipesData,
 });
 
-export default connect(mapStateToProps, { likeRecipe })(SearchResults);
+export default connect(mapStateToProps, { saveRecipe })(SearchResults);
