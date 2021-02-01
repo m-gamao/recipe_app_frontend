@@ -1,10 +1,12 @@
 //event.target.value is the element in the html that you are targeting-the data value that was 
 //provided by the user.
+//Keep imports in curly braces when you are importing a specific method from the file or library.
+//Default exports that are imported get no curly braces.
 
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getServings } from '../../../Store/middleware/ServingsSearchAsync';
-import ServingsResults from './ServingsResults';
+
 
 const ServingsForm = () => { 
     const [search, setSearch] = useState("")

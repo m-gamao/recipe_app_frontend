@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda+One&display=swap");
+
+.logo > h1 {
+  color: rgb(58, 25, 148);
+  opacity: 1;
+  font-family: "Merienda One", cursive;
+  font-size: 300%;
+  font-weight: bold;
+  /* position: absolute; */
+  /* justify-content: center;
+   */
+}
+
+.form {
+  color: white;
+}

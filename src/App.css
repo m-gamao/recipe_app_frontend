@@ -27,18 +27,20 @@
   top: 53%;
   left: 50%;
 }
-.btn:hover {background-color: #3d8840}
+.btn:hover {
+  background-color: #3d8840;
+}
 
 .btn:active {
   background-color: #414241;
   box-shadow: 0 5px #666;
-} 
+}
 
 /* LOG IN BUTTON******************************************************** */
 
 .log-in-btn {
-  position : absolute;
-  top: 25px;  
+  position: absolute;
+  top: 25px;
   left: 25px;
   opacity: 1;
   display: inline-block;
@@ -53,26 +55,27 @@
   border: none;
   border-radius: 5px;
   box-shadow: 0 5px #999;
+}
 
- } 
+.log-in-btn:hover {
+  background-color: #3d8840;
+}
 
- .log-in-btn:hover {background-color: #3d8840}
-
- .log-in-btn:active {
-   background-color: #414241;
-   box-shadow: 0 5px #666;
-   transform: translateY(1px);
- } 
+.log-in-btn:active {
+  background-color: #414241;
+  box-shadow: 0 5px #666;
+  transform: translateY(1px);
+}
 
 /* TEXT BOX ********************************************************* */
 
 /* this is also the black tinted box around the title */
 .box1 {
   text-align: center;
-  opacity: .7;
+  opacity: 0.7;
   /* background: rgba(94, 83, 83, 0.5); */
   background-color: rgb(63, 59, 59);
-  color: #fcf9f9;  
+  color: #fcf9f9;
   font-weight: normal;
   position: absolute;
   top: 50%;
@@ -84,7 +87,7 @@
   /* color: white; */
   color: white;
   opacity: 1;
-  font-family: 'Merienda One', cursive;
+  font-family: "Merienda One", cursive;
   font-size: 300%;
   font-weight: bold;
   position: absolute;
@@ -106,12 +109,12 @@
 
 /* This is the black tinted translucent box around the text */
 .content {
-  border: 1px solid; 
+  border: 1px solid;
   border-color: rgb(39, 33, 33);
   background-color: rgb(37, 37, 37);
   text-align: center;
   opacity: 1;
-  font-family: 'Merienda One', cursive;
+  font-family: "Merienda One", cursive;
   font-size: 130%;
   padding: 5px;
   width: 562px;
@@ -119,20 +122,27 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);   
-  font-weight: bold; 
+  transform: translate(-50%, -50%);
+  font-weight: bold;
   /* color: #fdfbfb;   */
   /* Below is for a white opaque text box: */
   /* background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-  /* background: rgba(204, 204, 204, 0.5); */ 
+  /* background: rgba(204, 204, 204, 0.5); */
 }
+
+/* .container {
+  border: 3px solid red;
+  width: 100%;
+  position: absolute;
+  /* top: 15%;
+  right: 5%; */
 
 /* BACKGROUND PIC ********************************************************* */
 
 .homepage_pic {
-  background: no-repeat center fixed;     
+  background: no-repeat center fixed;
   background-size: cover;
-} 
+}
 /* VIDEO BACKGROUND PLAYING************************************* */
 
 /* .video-container {
@@ -145,21 +155,19 @@
 } */
 /* .video-container video {
   /* Make video to at least 100% wide and tall */
-  /* min-width: 100%; 
+/* min-width: 100%; 
   min-height: 100%;  */
 
-  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
-  /* width: auto;
+/* Setting width & height to auto prevents the browser from stretching or squishing the video */
+/* width: auto;
   height: auto; */
 
-  /* Center the video */
-  /* position: absolute;
+/* Center the video */
+/* position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }  */
-
-
 
 /* USE THE BELOW BOX WITH THE VIDEO IF USED */
 /*
@@ -175,7 +183,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
 } */
- /* background-color: #ffffff; */
+/* background-color: #ffffff; */
 
 /* OTHER CODE - UNUSED ******************************************************** */
 /* Centered text */
@@ -191,7 +199,6 @@
   padding-bottom: 15px;
   padding-top: 50px;
 } */
-
 
 /* 
 

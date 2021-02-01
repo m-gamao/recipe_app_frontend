@@ -14,18 +14,22 @@
   // to update the store.
 
 // Each case represents an action type.
-
+// *Load Favorites: loads the favorites you searched for on the page.
+// *Add Favorites: posts the favorites that you added to the favorites table in the database.
+// *Filter Favorites: filters the items in the favorites table by yield size.
 
 //INITIAL STATE*********************************************************************/
 const initialState = {
     favorites: [],
-    results: []
+    results: [],
+    likes: []
 }
 
 //ACTION TYPES**(Serves as a reference for naming)*************************************************************************** */
 const LOAD_FAVORITES = "LOAD_FAVORITES"
 const ADD_FAVORITE = "ADD_FAVORITE"
 const FILTER_FAVORITES = "FILTER_FAVORITES"
+const FAVORITE_LIKED = "FAVORITE_LIKED"
 
 //STEP 2: REDUCER (aka PURE FUNCTION)************************************************************** */
 export default function manageFavorites(state = initialState, action) {
@@ -45,10 +49,19 @@ export default function manageFavorites(state = initialState, action) {
                 ...state,
                 results: action.payload.results
             }
+        case FAVORITE_LIKED:
+            return {
+                ...state,
+                likes: [...state.likes, action.payload.like]
+            }
         default: 
             return state;
     }
 } 
+
+// any changes made to state invokes a page re-render reflecting all of the new changes (i.e action.payload)
+
+
 
 
 //STEP 1: ACTION CREATORS ************************************************************************* */
@@ -76,6 +89,15 @@ export const filterFavorites = results => {
         type: FILTER_FAVORITES,
         payload: {
             results
+        }
+    }
+}
+
+export const favoriteLiked = like => {
+    return {
+        type: FAVORITE_LIKED,
+        payload: {
+            like
         }
     }
 }

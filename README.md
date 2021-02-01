@@ -1,58 +1,63 @@
-Homework: 
+Homework for school project:
+
 1. Get the like feature to work where you can like any of your favorites, but it does not persist or connect to the rails backend. Likes reset to 0 after page refreshes
 2. In a separate branch, get the likes of each favorite to persist AND connect to redux. SO if we refresh the page the number of likes remain for each favorite
 
-_______________________________________________________________
+---
+
 ## Parts:
-1. App.js: Renders the home page with button navigation. *Done*
+
+1. App.js: Renders the home page with button navigation. _Done_
 2. Form.js: renders the search form that the user enters a keyword for recipe search.
 3. RecipeSearch.js: Sends a fetch call to the recipe API to get a listing of recipes.
-4. Recipes.js: Lists the results of the fetch. 
-    -User can click likes here.
+4. Recipes.js: Lists the results of the fetch.
+   -User can click likes here.
 5. Recipe.js: Shows the single recipe that the user has selected from the search results.
-    -User can click likes.
-6. CreatePlan.js: Clicking the button on the homepage directs you here. Uses RecipesSearch, 
-Form.js, Recipes.js, and Recipe.js.
-6. App.css: CSS styling
-7. Index.js:
-8. Index.css:
-
+   -User can click likes.
+6. CreatePlan.js: Clicking the button on the homepage directs you here. Uses RecipesSearch,
+   Form.js, Recipes.js, and Recipe.js.
+7. App.css: CSS styling
+8. Index.js:
+9. Index.css:
 
 ## Flow:
+
 1. User Login: App.js > click login button > login.js > App.js
-Logout path: User can logout from any page via a link or button > click logout > App.js.
-2. Find a recipe: App.js > click 1st button > form.js > recipesearch.js > recipes.js > recipe.js (*how do you incorporate clicking 'like' on a recipe?)
+   Logout path: User can logout from any page via a link or button > click logout > App.js.
+2. Find a recipe: App.js > click 1st button > form.js > recipesearch.js > recipes.js > recipe.js (\*how do you incorporate clicking 'like' on a recipe?)
 3. See my favorites: App.js > click 2nd button > AllFavorites.js > form.js > recipesearch.js > recipes.js > recipe.js.
 
-***************************************************************************
+---
+
 ## Parts:
+
 1. App.js: Renders the home page with button navigation.
 2. Form.js: renders the search form that the user enters a keyword for recipe search.
 3. RecipeSearch.js: Sends a fetch call to the recipe API to get a listing of recipes.
-4. Recipes.js: Lists the results of the fetch. 
-    -User can click likes here.
+4. Recipes.js: Lists the results of the fetch.
+   -User can click likes here.
 5. Recipe.js: Shows the single recipe that the user has selected from the search results.
-    -User can click likes.
+   -User can click likes.
 6. App.css: CSS styling
 7. Index.js:
 8. Index.css:
 9. AllFavorites.js: All the user's favorites in no particular order.
 
 ## Flow:
+
 1. User Login: App.js > click login button > login.js > App.js
-Logout path: User can logout from any page via a link or button > click logout > App.js.
-2. Find a recipe: App.js > click 1st button > form.js > recipesearch.js > recipes.js > recipe.js (*how do you incorporate clicking 'like' on a recipe?)
+   Logout path: User can logout from any page via a link or button > click logout > App.js.
+2. Find a recipe: App.js > click 1st button > form.js > recipesearch.js > recipes.js > recipe.js (\*how do you incorporate clicking 'like' on a recipe?)
 3. See my favorites: App.js > click 2nd button > AllFavorites.js > form.js > recipesearch.js > recipes.js > recipe.js.
 
-**************************
+---
+
 ## Old Notes:
+
 1. Be sure to add components for liking/unliking with a heart in:
-    - recipes.js
-    - recipe.js
+   - recipes.js
+   - recipe.js
 2. Add user login components.
-
-
-
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -122,4 +127,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
 # recipes_app_v4
