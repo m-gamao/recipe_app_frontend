@@ -6,23 +6,24 @@
 
 // Always make sure that the Action Creator that you wish to dispatch is *IMPORTED*, see line 9, line 20.
 // This file fetches recipe data from the 3rd Party API that contains all the recipe database.
+// const APP_KEY = "3822eee64683985d4b5cc5935bae9734";
 
 import { showRecipes } from "../reducers/manageRecipesReducer";
 
-
-const APP_KEY = "3822eee64683985d4b5cc5935bae9734";
-const APP_ID = "3dfa9e92";
+const API_KEY = "407fa8abed544ee38fab0d3499b011a5";
 
 export const getRecipes = (query) => {
-    return dispatch => {
-        return fetch(`https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`)
-        .then(res => res.json())
-        .then(recipesData =>{
-            dispatch(showRecipes(recipesData.hits))
-        })
-    }
-}  
-    
+  return (dispatch) => {
+    return fetch(
+      `https://api.spoonacular.com/food/products/search?query=${query}&apiKey=${API_KEY}`
+    )
+      .then((res) => res.json())
+      .then((recipesData) => {
+        dispatch(showRecipes(recipesData.hits));
+      });
+  };
+};
+
 // export const likeRecipe = () => {
 //     return dispatch => {
 //       const sendableLikeData = {
@@ -39,9 +40,7 @@ export const getRecipes = (query) => {
 //         })
 //         .catch(console.log)
 //     }
-// }  
-
-
+// }
 
 // export const loadingSearchResults = resultsList => {
 //     return (dispatch, getState) => {

@@ -21,11 +21,12 @@ const FavoritesForm = () => {
     setSearch(event.target.value);
   };
 
+  // The Question Mark waits for the present value.
   const handleSubmit = (event) => {
     event.preventDefault();
     const results = state.favorites.filter((fav) => {
       console.log(fav);
-      return fav.recipe_name.includes(search);
+      return fav.recipe_name?.includes(search);
     });
     dispatch(filterFavorites(results));
     setSearch("");

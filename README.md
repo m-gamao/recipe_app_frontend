@@ -1,3 +1,9 @@
+// https://api.spoonacular.com/food/products/search?query=${query}&apiKey=API-KEY
+const API-KEY = "407fa8abed544ee38fab0d3499b011a5"; //spoonacular
+
+
+
+
 Homework for school project:
 
 1. Get the like feature to work where you can like any of your favorites, but it does not persist or connect to the rails backend. Likes reset to 0 after page refreshes
