@@ -10,12 +10,13 @@
 
 import { showRecipes } from "../reducers/manageRecipesReducer";
 
-const API_KEY = "407fa8abed544ee38fab0d3499b011a5";
+const APP_KEY = "b25478de961b82d19a5c8a8b132320de";
+const APP_ID = "ab0ceb33";
 
 export const getRecipes = (query) => {
   return (dispatch) => {
     return fetch(
-      `https://api.spoonacular.com/food/products/search?query=${query}&apiKey=${API_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
     )
       .then((res) => res.json())
       .then((recipesData) => {
