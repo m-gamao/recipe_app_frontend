@@ -1,8 +1,6 @@
-// https://api.spoonacular.com/food/products/search?query=${query}&apiKey=API-KEY
-const API-KEY = "407fa8abed544ee38fab0d3499b011a5"; //spoonacular
+To Do:
 
-
-
+1. Check if the branches are good.
 
 Homework for school project:
 
