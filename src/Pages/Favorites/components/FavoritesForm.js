@@ -12,6 +12,7 @@ import { filterFavorites } from "../../../Store/reducers/manageFavorites";
 
 const FavoritesForm = () => {
   const [search, setSearch] = useState("");
+
   const state = useSelector((state) => ({
     favorites: state.favsReducer.favorites,
   }));
@@ -21,12 +22,16 @@ const FavoritesForm = () => {
     setSearch(event.target.value);
   };
 
-  // The Question Mark waits for the present value.
+  // The Question Mark below waits for the present value. The ? ensures that fav.recipe_name is a truthy value
+  // meaning it doesn't come back "null" or "undefined". And then you can set that value to lower case.
+  // Line 30 will standardize the user's input and recipe's name
+  // "includes" is always better than using ===
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const results = state.favorites.filter((fav) => {
       console.log(fav);
-      return fav.recipe_name?.includes(search);
+      return fav.recipe_name?.toLowerCase().includes(search.toLowerCase());
     });
     dispatch(filterFavorites(results));
     setSearch("");

@@ -2,6 +2,8 @@ To Do:
 
 1. Check if the branches are good.
 
+---
+
 Homework for school project:
 
 1. Get the like feature to work where you can like any of your favorites, but it does not persist or connect to the rails backend. Likes reset to 0 after page refreshes

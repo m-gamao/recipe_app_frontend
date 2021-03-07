@@ -11,6 +11,7 @@ import {
   addFavorite,
   loadFavorites,
   favoriteLiked,
+  removeFavoriteSync,
 } from "../reducers/manageFavorites";
 
 // The getFavoriteRecipes method should produce a list of the favorites matched to the keyword
@@ -61,9 +62,21 @@ export const incrementFavLikeCounter = (favorite_id) => {
       body: JSON.stringify(data),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        dispatch(favoriteLiked(data));
+      .then((favorite) => {
+        console.log(favorite);
+        dispatch(favoriteLiked(favorite));
+      });
+  };
+};
+
+export const removeFavoriteAsync = (favToDelete, allFavorites) => {
+  return (dispatch) => {
+    fetch(`http://localhost:3001/api/v1/favorites/${favToDelete.id}`)
+      .then((res) => res.json())
+      .then((favThatWasDeleted) => {
+        dispatch(removeFavoriteSync(favToDelete, allFavorites));
+        console.log("Favorite deleted successfully");
+        console.log(favThatWasDeleted);
       });
   };
 };
