@@ -10,11 +10,10 @@
 
 import { showRecipes } from "../reducers/manageRecipesReducer";
 
-
 export const getRecipes = (query) => {
   return (dispatch) => {
     return fetch(
-      `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
+      `https://api.edamam.com/search?q=${query}&app_id=${process.env.REACT_APP_APP_ID}&app_key=${process.env.REACT_APP_APP_KEY}`
     )
       .then((res) => res.json())
       .then((recipesData) => {
