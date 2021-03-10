@@ -1,5 +1,5 @@
 // "useSelector" is a hook that allows you to operate like mapStatetoProps.  It allows
-//you to go into store and get the slice of state of want. In this case it is
+//you to go into store and get the slice of state you want. In this case it is
 //updating your favorites.
 // const search is a string, and setSearch allows you to update that string.
 //It is like setState.
