@@ -10,8 +10,6 @@
 
 import { showRecipes } from "../reducers/manageRecipesReducer";
 
-const APP_KEY = "b25478de961b82d19a5c8a8b132320de";
-const APP_ID = "ab0ceb33";
 
 export const getRecipes = (query) => {
   return (dispatch) => {
