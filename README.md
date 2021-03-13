@@ -1,8 +1,11 @@
-To Do:
+This is my 5th full stack application project for the Flatiron School.
+The front end is written in React/Redux and the backend is written in Ruby on Rails.
 
-1. Check if the branches are good.
-2. testing (3/10/21) making comments 3:20pm
-3. Lets see if this commits 3/12/21 4:22pm
+Users can search the database for recipes, and save their favorite recipes to the app.
+There is a saved recipes folder that allows you to sort recipes by serving size (yield),
+and sort your saved recipes alphabetically.
+
+The repo for the backend is: https://github.com/m-gamao/recipe_app_backend.git
 
 ---
 
