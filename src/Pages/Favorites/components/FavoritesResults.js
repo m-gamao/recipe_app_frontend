@@ -1,11 +1,11 @@
 // DISPLAYS THE FAVORITES SEARCH RESULTS****************************
 // THE ONLY ATTRIBS WE'RE FETCHING IS THE LABEL, URL, AND IMAGE****************
-// Line 21 is the link the user clicks to navigate to the single recipe they choose
+// The user clicks to navigate to the single recipe they choose.
 // This is a class component - you cannot use hooks in a class component.
 // Instead - you have to use the CONNECT function - MSTP/MDTP are dependent on the CONNECT function.
-// The properties for <Recipe/> gets established in this file on line 120. You are pulling in the
+// The properties for <Recipe/> gets established in this file on line 112. You are pulling in the
 // data from the backend rails app, using the names from the db tables, then setting that data to new
-// prop names, which you will then pass to the Recipe component.
+// prop names, which you will then pass to the Recipe.js component.
 
 import React, { Component } from "react";
 import { connect } from "react-redux";

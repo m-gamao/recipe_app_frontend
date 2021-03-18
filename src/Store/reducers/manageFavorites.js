@@ -13,11 +13,6 @@
 // on the payload passed in (ie. lines 28-31). Payload is the data being sent by the action
 // to update the store.
 
-// Each case represents an action type.
-// *Load Favorites: loads the favorites you searched for on the page.
-// *Add Favorites: posts the favorites that you added to the favorites table in the database.
-// *Filter Favorites: filters the items in the favorites table by yield size.
-
 //INITIAL STATE*********************************************************************/
 const initialState = {
   favorites: [],
@@ -65,7 +60,8 @@ export default function manageFavorites(state = initialState, action) {
   }
 }
 
-// any changes made to state invokes a page re-render reflecting all of the new changes (i.e action.payload)
+// any changes made to state invokes a page re-render reflecting all of the new changes
+//(i.e action.payload)
 
 //STEP 1: ACTION CREATORS ************************************************************************* */
 // The action creators below get passed down to child components as props (see the favoritesresults.js file)
@@ -105,12 +101,24 @@ export const favoriteLiked = (like) => {
   };
 };
 
-export const removeFavoriteSync = (favToDelete, allFavorites) => {
-  const results = allFavorites.filter((fav) => fav.id !== favToDelete.id);
-  return {
-    type: REMOVE_FAVORITE,
-    payload: {
-      favorites: results,
-    },
-  };
-};
+// WORKING ON A SOLUTION FOR THE DELETE SAVES FUNCTION:
+// export const removeFavoriteSync = (favToDelete, allFavorites) => {
+//   const results = allFavorites.filter((fav) => fav.id !== favToDelete.id);
+//   return {
+//     type: REMOVE_FAVORITE,
+//     payload: {
+//       favorites: results,
+//     },
+//   };
+// };
+
+//NOTES:
+// Actions are the only source of information for the store as per Redux official documentation.
+// An action carries a payload of information from your application to store.
+// Actions are plain JavaScript objects that must have a type attribute to indicate the
+// type of action performed.
+
+// Each Case in the switch/case block represents an action type:
+// *Load Favorites: loads the favorites you searched for on the page.
+// *Add Favorites: posts the favorites that you added to the favorites table in the database.
+// *Filter Favorites: filters the items in the favorites table by yield size.

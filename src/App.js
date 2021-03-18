@@ -1,9 +1,7 @@
 // App.js is responsible for corralling all of the components in one place,
 // to deliver to the index.js file. App.js is the middleman between child components
 // rendering to index.js.
-// import UserInput from './components/UserInput';
-// import './css/customStyles.css'
-// import SelectedItem from './components/SelectedItem';
+
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router-dom";

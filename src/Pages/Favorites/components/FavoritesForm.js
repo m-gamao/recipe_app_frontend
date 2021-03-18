@@ -16,15 +16,16 @@ const FavoritesForm = () => {
   const state = useSelector((state) => ({
     favorites: state.favsReducer.favorites,
   }));
+
   const dispatch = useDispatch();
 
   const handleOnChange = (event) => {
     setSearch(event.target.value);
   };
 
-  // The Question Mark below waits for the present value. The ? ensures that fav.recipe_name is a truthy value
+  // The Question Mark below waits for the present value. The ? ensures that fav.recipe_name is a truthy value,
   // meaning it doesn't come back "null" or "undefined". And then you can set that value to lower case.
-  // Line 30 will standardize the user's input and recipe's name
+  // Line 30 will standardize the user's input and recipe's name.
   // "includes" is always better than using ===
 
   const handleSubmit = (event) => {

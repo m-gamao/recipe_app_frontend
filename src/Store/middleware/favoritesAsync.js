@@ -69,17 +69,18 @@ export const incrementFavLikeCounter = (favorite_id) => {
   };
 };
 
-export const removeFavoriteAsync = (favToDelete, allFavorites) => {
-  return (dispatch) => {
-    fetch(`http://localhost:3001/api/v1/favorites/${favToDelete.id}`)
-      .then((res) => res.json())
-      .then((favThatWasDeleted) => {
-        dispatch(removeFavoriteSync(favToDelete, allFavorites));
-        console.log("Favorite deleted successfully");
-        console.log(favThatWasDeleted);
-      });
-  };
-};
+// WORKING ON A SOLUTION FOR THE DELETE FUNCTION:
+// export const removeFavoriteAsync = (favToDelete, allFavorites) => {
+//   return (dispatch) => {
+//     fetch(`http://localhost:3001/api/v1/favorites/${favToDelete.id}`)
+//       .then((res) => res.json())
+//       .then((favThatWasDeleted) => {
+//         dispatch(removeFavoriteSync(favToDelete, allFavorites));
+//         console.log("Favorite deleted successfully");
+//         console.log(favThatWasDeleted);
+//       });
+//   };
+// };
 
 // NOTE: Once we pass the data into the 'favoriteLiked' action, the switch case statement
 //does something with the payload (data), and the page is re-rendered.
