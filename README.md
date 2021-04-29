@@ -1,3 +1,4 @@
+Hello! Thanks for visiting!
 This is my 5th full stack application project for the Flatiron School.
 The front end is written in React/Redux and the backend is written in Ruby on Rails.
 
