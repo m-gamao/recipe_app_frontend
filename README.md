@@ -4,7 +4,8 @@ The front end is written in React/Redux and the backend is written in Ruby on Ra
 
 Users can search the database for recipes, and save their favorite recipes to the app.
 There is a saved recipes folder that allows you to sort recipes by serving size (yield),
-and sort your saved recipes alphabetically.
+and sort your saved recipes alphabetically. There is also a likes counter, where can also "like" the recipes in the saved folder, and the number of likes get added to the total count for that recipe.
+This last feature was for proof of concept.
 
 The repo for the backend is: https://github.com/m-gamao/recipe_app_backend.git
 
