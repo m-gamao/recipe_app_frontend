@@ -11,7 +11,7 @@ import {
   addFavorite,
   loadFavorites,
   favoriteLiked,
-  removeFavoriteSync,
+  // removeFavoriteSync,
 } from "../reducers/manageFavorites";
 
 // The getFavoriteRecipes method should produce a list of the favorites matched to the keyword
